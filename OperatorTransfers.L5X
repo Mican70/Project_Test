@@ -1,0 +1,2867 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<RSLogix5000Content SchemaRevision="1.0" SoftwareRevision="32.00" TargetName="OperatorTransfers" TargetType="Routine" TargetSubType="RLL" ContainsContext="true" Owner="Mike-WNE, WME" ExportDate="Sat Mar 14 21:04:44 2026" ExportOptions="References NoRawData L5KData DecoratedData Context Dependencies ForceProtectedEncoding AllProjDocTrans">
+<Controller Use="Context" Name="J9352_MonticelloDigester">
+<DataTypes Use="Context">
+<DataType Name="TransferDetails" Family="NoFamily" Class="User">
+<Members>
+<Member Name="FromTank" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="ToTank" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="Quantity" DataType="REAL" Dimension="0" Radix="Float" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="Hour" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="Minute" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Name="VALVE" Family="NoFamily" Class="User">
+<Members>
+<Member Name="ASSET_NAME" DataType="STRING" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="DESCRIPTION" DataType="STRING" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="ZZZZZZZZZZVALVE2" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="true" ExternalAccess="Read/Write"/>
+<Member Name="AAU" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVALVE2" BitNumber="0" ExternalAccess="Read/Write"/>
+<Member Name="ACAK" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVALVE2" BitNumber="1" ExternalAccess="Read/Write"/>
+<Member Name="ACFR" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVALVE2" BitNumber="2" ExternalAccess="Read/Write"/>
+<Member Name="AFD" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVALVE2" BitNumber="3" ExternalAccess="Read/Write"/>
+<Member Name="AFDBL" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVALVE2" BitNumber="4" ExternalAccess="Read/Write"/>
+<Member Name="AFE" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVALVE2" BitNumber="5" ExternalAccess="Read/Write"/>
+<Member Name="AFEBL" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVALVE2" BitNumber="6" ExternalAccess="Read/Write"/>
+<Member Name="CAE" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVALVE2" BitNumber="7" ExternalAccess="Read/Write"/>
+<Member Name="ZZZZZZZZZZVALVE11" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="true" ExternalAccess="Read/Write"/>
+<Member Name="CFR" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVALVE11" BitNumber="0" ExternalAccess="Read/Write"/>
+<Member Name="CHLIM" DataType="REAL" Dimension="0" Radix="Float" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="CLLIM" DataType="REAL" Dimension="0" Radix="Float" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="ZZZZZZZZZZVALVE15" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="true" ExternalAccess="Read/Write"/>
+<Member Name="CME" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVALVE15" BitNumber="0" ExternalAccess="Read/Write"/>
+<Member Name="CMM" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVALVE15" BitNumber="1" ExternalAccess="Read/Write"/>
+<Member Name="CMO" DataType="REAL" Dimension="0" Radix="Float" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="ZZZZZZZZZZVALVE19" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="true" ExternalAccess="Read/Write"/>
+<Member Name="CMSK" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVALVE19" BitNumber="0" ExternalAccess="Read/Write"/>
+<Member Name="CPI" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVALVE19" BitNumber="1" ExternalAccess="Read/Write"/>
+<Member Name="CPTP" DataType="REAL" Dimension="0" Radix="Float" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="ZZZZZZZZZZVALVE23" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="true" ExternalAccess="Read/Write"/>
+<Member Name="CSL" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVALVE23" BitNumber="0" ExternalAccess="Read/Write"/>
+<Member Name="IAO" DataType="REAL" Dimension="0" Radix="Float" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="ZZZZZZZZZZVALVE26" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="true" ExternalAccess="Read/Write"/>
+<Member Name="IAOK" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVALVE26" BitNumber="0" ExternalAccess="Read/Write"/>
+<Member Name="ICER" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVALVE26" BitNumber="1" ExternalAccess="Read/Write"/>
+<Member Name="ICO" DataType="REAL" Dimension="0" Radix="Float" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="ZZZZZZZZZZVALVE30" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="true" ExternalAccess="Read/Write"/>
+<Member Name="ID" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVALVE30" BitNumber="0" ExternalAccess="Read/Write"/>
+<Member Name="IE" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVALVE30" BitNumber="1" ExternalAccess="Read/Write"/>
+<Member Name="IFLT" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVALVE30" BitNumber="2" ExternalAccess="Read/Write"/>
+<Member Name="IFS" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVALVE30" BitNumber="3" ExternalAccess="Read/Write"/>
+<Member Name="IHLIM" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVALVE30" BitNumber="4" ExternalAccess="Read/Write"/>
+<Member Name="ILLIM" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVALVE30" BitNumber="5" ExternalAccess="Read/Write"/>
+<Member Name="IPI" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVALVE30" BitNumber="6" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+</DataTypes>
+<Modules Use="Context">
+<Module Use="Reference" Name="_200_HPU_01">
+</Module>
+<Module Use="Reference" Name="_400_HPU_01">
+</Module>
+</Modules>
+<AddOnInstructionDefinitions Use="Context">
+<AddOnInstructionDefinition Name="AOI_Flow_Logging" Revision="1.0" ExecutePrescan="false" ExecutePostscan="false" ExecuteEnableInFalse="false" CreatedDate="2013-06-26T16:01:45.103Z" CreatedBy="VM_ROCK_CPR9\Ben Webb" EditedDate="2014-04-30T16:00:18.218Z" EditedBy="VM_ROCK_CPR9\Ben Webb" SoftwareRevision="v19.01">
+<Parameters>
+<Parameter Name="EnableIn" TagType="Base" DataType="BOOL" Usage="Input" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read Only"/>
+<Parameter Name="EnableOut" TagType="Base" DataType="BOOL" Usage="Output" Radix="Decimal" Required="false" Visible="false" ExternalAccess="Read Only"/>
+<Parameter Name="Daily_Flow" TagType="Base" DataType="REAL" Usage="Input" Radix="Float" Required="true" Visible="true" ExternalAccess="Read/Write">
+<DefaultData Format="L5K">
+<![CDATA[0.00000000e+000]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="0.0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Flow_Source" TagType="Base" DataType="REAL" Usage="Input" Radix="Float" Required="false" Visible="false" ExternalAccess="Read/Write">
+<DefaultData Format="L5K">
+<![CDATA[0.00000000e+000]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="0.0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Current_Day" TagType="Base" DataType="REAL" Usage="Output" Radix="Float" Required="false" Visible="true" ExternalAccess="Read Only">
+<DefaultData Format="L5K">
+<![CDATA[0.00000000e+000]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="0.0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Previous_Day_Flow" TagType="Base" DataType="REAL" Usage="Output" Radix="Float" Required="false" Visible="false" ExternalAccess="Read Only">
+<DefaultData Format="L5K">
+<![CDATA[0.00000000e+000]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="0.0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Day1" TagType="Base" DataType="REAL" Usage="Output" Radix="Float" Required="false" Visible="true" ExternalAccess="Read Only">
+<DefaultData Format="L5K">
+<![CDATA[0.00000000e+000]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="0.0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Day2" TagType="Base" DataType="REAL" Usage="Output" Radix="Float" Required="false" Visible="true" ExternalAccess="Read Only">
+<DefaultData Format="L5K">
+<![CDATA[0.00000000e+000]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="0.0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Day3" TagType="Base" DataType="REAL" Usage="Output" Radix="Float" Required="false" Visible="true" ExternalAccess="Read Only">
+<DefaultData Format="L5K">
+<![CDATA[0.00000000e+000]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="0.0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Day4" TagType="Base" DataType="REAL" Usage="Output" Radix="Float" Required="false" Visible="true" ExternalAccess="Read Only">
+<DefaultData Format="L5K">
+<![CDATA[0.00000000e+000]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="0.0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Day5" TagType="Base" DataType="REAL" Usage="Output" Radix="Float" Required="false" Visible="true" ExternalAccess="Read Only">
+<DefaultData Format="L5K">
+<![CDATA[0.00000000e+000]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="0.0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Day6" TagType="Base" DataType="REAL" Usage="Output" Radix="Float" Required="false" Visible="true" ExternalAccess="Read Only">
+<DefaultData Format="L5K">
+<![CDATA[0.00000000e+000]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="0.0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Day7" TagType="Base" DataType="REAL" Usage="Output" Radix="Float" Required="false" Visible="true" ExternalAccess="Read Only">
+<DefaultData Format="L5K">
+<![CDATA[0.00000000e+000]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="0.0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Day8" TagType="Base" DataType="REAL" Usage="Output" Radix="Float" Required="false" Visible="true" ExternalAccess="Read Only">
+<DefaultData Format="L5K">
+<![CDATA[0.00000000e+000]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="0.0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Daily_Flow_AVG" TagType="Base" DataType="REAL" Usage="Output" Radix="Float" Required="false" Visible="true" ExternalAccess="Read Only">
+<DefaultData Format="L5K">
+<![CDATA[0.00000000e+000]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="0.0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Current_Week_Flow" TagType="Base" DataType="REAL" Usage="Output" Radix="Float" Required="false" Visible="true" ExternalAccess="Read Only">
+<DefaultData Format="L5K">
+<![CDATA[0.00000000e+000]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="0.0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Previous_Week_Flow" TagType="Base" DataType="REAL" Usage="Output" Radix="Float" Required="false" Visible="true" ExternalAccess="Read Only">
+<DefaultData Format="L5K">
+<![CDATA[0.00000000e+000]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="0.0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Current_Month_Flow" TagType="Base" DataType="REAL" Usage="Output" Radix="Float" Required="false" Visible="true" ExternalAccess="Read Only">
+<DefaultData Format="L5K">
+<![CDATA[0.00000000e+000]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="0.0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Month1" TagType="Base" DataType="REAL" Usage="Output" Radix="Float" Required="false" Visible="true" ExternalAccess="Read Only">
+<DefaultData Format="L5K">
+<![CDATA[0.00000000e+000]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="0.0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Month2" TagType="Base" DataType="REAL" Usage="Output" Radix="Float" Required="false" Visible="true" ExternalAccess="Read Only">
+<DefaultData Format="L5K">
+<![CDATA[0.00000000e+000]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="0.0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Month3" TagType="Base" DataType="REAL" Usage="Output" Radix="Float" Required="false" Visible="true" ExternalAccess="Read Only">
+<DefaultData Format="L5K">
+<![CDATA[0.00000000e+000]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="0.0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Month4" TagType="Base" DataType="REAL" Usage="Output" Radix="Float" Required="false" Visible="true" ExternalAccess="Read Only">
+<DefaultData Format="L5K">
+<![CDATA[0.00000000e+000]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="0.0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Month5" TagType="Base" DataType="REAL" Usage="Output" Radix="Float" Required="false" Visible="true" ExternalAccess="Read Only">
+<DefaultData Format="L5K">
+<![CDATA[0.00000000e+000]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="0.0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Month6" TagType="Base" DataType="REAL" Usage="Output" Radix="Float" Required="false" Visible="true" ExternalAccess="Read Only">
+<DefaultData Format="L5K">
+<![CDATA[0.00000000e+000]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="0.0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Month7" TagType="Base" DataType="REAL" Usage="Output" Radix="Float" Required="false" Visible="true" ExternalAccess="Read Only">
+<DefaultData Format="L5K">
+<![CDATA[0.00000000e+000]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="0.0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Month8" TagType="Base" DataType="REAL" Usage="Output" Radix="Float" Required="false" Visible="true" ExternalAccess="Read Only">
+<DefaultData Format="L5K">
+<![CDATA[0.00000000e+000]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="0.0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Month9" TagType="Base" DataType="REAL" Usage="Output" Radix="Float" Required="false" Visible="true" ExternalAccess="Read Only">
+<DefaultData Format="L5K">
+<![CDATA[0.00000000e+000]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="0.0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Month10" TagType="Base" DataType="REAL" Usage="Output" Radix="Float" Required="false" Visible="true" ExternalAccess="Read Only">
+<DefaultData Format="L5K">
+<![CDATA[0.00000000e+000]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="0.0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Month11" TagType="Base" DataType="REAL" Usage="Output" Radix="Float" Required="false" Visible="true" ExternalAccess="Read Only">
+<DefaultData Format="L5K">
+<![CDATA[0.00000000e+000]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="0.0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Month12" TagType="Base" DataType="REAL" Usage="Output" Radix="Float" Required="false" Visible="true" ExternalAccess="Read Only">
+<DefaultData Format="L5K">
+<![CDATA[0.00000000e+000]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="0.0"/>
+</DefaultData>
+</Parameter>
+<Parameter Name="Anual_Flow" TagType="Base" DataType="REAL" Usage="Output" Radix="Float" Required="false" Visible="true" ExternalAccess="Read Only">
+<DefaultData Format="L5K">
+<![CDATA[0.00000000e+000]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="0.0"/>
+</DefaultData>
+</Parameter>
+</Parameters>
+<LocalTags>
+<LocalTag Name="DATE_TIME" DataType="DINT" Dimensions="7" Radix="Decimal" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[[0,0,0,0,0,0,0]]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<Array DataType="DINT" Dimensions="7" Radix="Decimal">
+<Element Index="[0]" Value="0"/>
+<Element Index="[1]" Value="0"/>
+<Element Index="[2]" Value="0"/>
+<Element Index="[3]" Value="0"/>
+<Element Index="[4]" Value="0"/>
+<Element Index="[5]" Value="0"/>
+<Element Index="[6]" Value="0"/>
+</Array>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="One_Second_Timer" DataType="TIMER" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[[0,100,0]]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="100"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Seconds_Flow" DataType="REAL" Dimensions="60" Radix="Float" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[[0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000]]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<Array DataType="REAL" Dimensions="60" Radix="Float">
+<Element Index="[0]" Value="0.0"/>
+<Element Index="[1]" Value="0.0"/>
+<Element Index="[2]" Value="0.0"/>
+<Element Index="[3]" Value="0.0"/>
+<Element Index="[4]" Value="0.0"/>
+<Element Index="[5]" Value="0.0"/>
+<Element Index="[6]" Value="0.0"/>
+<Element Index="[7]" Value="0.0"/>
+<Element Index="[8]" Value="0.0"/>
+<Element Index="[9]" Value="0.0"/>
+<Element Index="[10]" Value="0.0"/>
+<Element Index="[11]" Value="0.0"/>
+<Element Index="[12]" Value="0.0"/>
+<Element Index="[13]" Value="0.0"/>
+<Element Index="[14]" Value="0.0"/>
+<Element Index="[15]" Value="0.0"/>
+<Element Index="[16]" Value="0.0"/>
+<Element Index="[17]" Value="0.0"/>
+<Element Index="[18]" Value="0.0"/>
+<Element Index="[19]" Value="0.0"/>
+<Element Index="[20]" Value="0.0"/>
+<Element Index="[21]" Value="0.0"/>
+<Element Index="[22]" Value="0.0"/>
+<Element Index="[23]" Value="0.0"/>
+<Element Index="[24]" Value="0.0"/>
+<Element Index="[25]" Value="0.0"/>
+<Element Index="[26]" Value="0.0"/>
+<Element Index="[27]" Value="0.0"/>
+<Element Index="[28]" Value="0.0"/>
+<Element Index="[29]" Value="0.0"/>
+<Element Index="[30]" Value="0.0"/>
+<Element Index="[31]" Value="0.0"/>
+<Element Index="[32]" Value="0.0"/>
+<Element Index="[33]" Value="0.0"/>
+<Element Index="[34]" Value="0.0"/>
+<Element Index="[35]" Value="0.0"/>
+<Element Index="[36]" Value="0.0"/>
+<Element Index="[37]" Value="0.0"/>
+<Element Index="[38]" Value="0.0"/>
+<Element Index="[39]" Value="0.0"/>
+<Element Index="[40]" Value="0.0"/>
+<Element Index="[41]" Value="0.0"/>
+<Element Index="[42]" Value="0.0"/>
+<Element Index="[43]" Value="0.0"/>
+<Element Index="[44]" Value="0.0"/>
+<Element Index="[45]" Value="0.0"/>
+<Element Index="[46]" Value="0.0"/>
+<Element Index="[47]" Value="0.0"/>
+<Element Index="[48]" Value="0.0"/>
+<Element Index="[49]" Value="0.0"/>
+<Element Index="[50]" Value="0.0"/>
+<Element Index="[51]" Value="0.0"/>
+<Element Index="[52]" Value="0.0"/>
+<Element Index="[53]" Value="0.0"/>
+<Element Index="[54]" Value="0.0"/>
+<Element Index="[55]" Value="0.0"/>
+<Element Index="[56]" Value="0.0"/>
+<Element Index="[57]" Value="0.0"/>
+<Element Index="[58]" Value="0.0"/>
+<Element Index="[59]" Value="0.0"/>
+</Array>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Seconds_Flow_CTL" DataType="CONTROL" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[[0,60,0]]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<Structure DataType="CONTROL">
+<DataValueMember Name="LEN" DataType="DINT" Radix="Decimal" Value="60"/>
+<DataValueMember Name="POS" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="EU" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="EM" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ER" DataType="BOOL" Value="0"/>
+<DataValueMember Name="UL" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="FD" DataType="BOOL" Value="0"/>
+</Structure>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Minute_Flow_Avg" DataType="REAL" Radix="Float" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0.00000000e+000]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="0.0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Minute_Flow_AVG_CTL" DataType="CONTROL" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[[0,60,0]]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<Structure DataType="CONTROL">
+<DataValueMember Name="LEN" DataType="DINT" Radix="Decimal" Value="60"/>
+<DataValueMember Name="POS" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="EU" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="EM" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ER" DataType="BOOL" Value="0"/>
+<DataValueMember Name="UL" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="FD" DataType="BOOL" Value="0"/>
+</Structure>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="FIFO_Scrap" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Minute_CTU" DataType="COUNTER" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[[0,60,0]]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<Structure DataType="COUNTER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="60"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="CU" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CD" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="OV" DataType="BOOL" Value="0"/>
+<DataValueMember Name="UN" DataType="BOOL" Value="0"/>
+</Structure>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Daily_FIFO" DataType="REAL" Dimensions="9" Radix="Float" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[[0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000]]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<Array DataType="REAL" Dimensions="9" Radix="Float">
+<Element Index="[0]" Value="0.0"/>
+<Element Index="[1]" Value="0.0"/>
+<Element Index="[2]" Value="0.0"/>
+<Element Index="[3]" Value="0.0"/>
+<Element Index="[4]" Value="0.0"/>
+<Element Index="[5]" Value="0.0"/>
+<Element Index="[6]" Value="0.0"/>
+<Element Index="[7]" Value="0.0"/>
+<Element Index="[8]" Value="0.0"/>
+</Array>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Daily_FIFO_CTL" DataType="CONTROL" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[[0,9,0]]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<Structure DataType="CONTROL">
+<DataValueMember Name="LEN" DataType="DINT" Radix="Decimal" Value="9"/>
+<DataValueMember Name="POS" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="EU" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="EM" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ER" DataType="BOOL" Value="0"/>
+<DataValueMember Name="UL" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="FD" DataType="BOOL" Value="0"/>
+</Structure>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Month_FIFO" DataType="REAL" Dimensions="13" Radix="Float" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[[0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000]]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<Array DataType="REAL" Dimensions="13" Radix="Float">
+<Element Index="[0]" Value="0.0"/>
+<Element Index="[1]" Value="0.0"/>
+<Element Index="[2]" Value="0.0"/>
+<Element Index="[3]" Value="0.0"/>
+<Element Index="[4]" Value="0.0"/>
+<Element Index="[5]" Value="0.0"/>
+<Element Index="[6]" Value="0.0"/>
+<Element Index="[7]" Value="0.0"/>
+<Element Index="[8]" Value="0.0"/>
+<Element Index="[9]" Value="0.0"/>
+<Element Index="[10]" Value="0.0"/>
+<Element Index="[11]" Value="0.0"/>
+<Element Index="[12]" Value="0.0"/>
+</Array>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Month_FIFO_CTL" DataType="CONTROL" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[[0,12,0]]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<Structure DataType="CONTROL">
+<DataValueMember Name="LEN" DataType="DINT" Radix="Decimal" Value="12"/>
+<DataValueMember Name="POS" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="EU" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="EM" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ER" DataType="BOOL" Value="0"/>
+<DataValueMember Name="UL" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="FD" DataType="BOOL" Value="0"/>
+</Structure>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Current_Month" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Month_FIFO_Scrap" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Weekly_Flow_AVG_CTL" DataType="CONTROL" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[[0,7,1]]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<Structure DataType="CONTROL">
+<DataValueMember Name="LEN" DataType="DINT" Radix="Decimal" Value="7"/>
+<DataValueMember Name="POS" DataType="DINT" Radix="Decimal" Value="1"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="EU" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="EM" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ER" DataType="BOOL" Value="0"/>
+<DataValueMember Name="UL" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="FD" DataType="BOOL" Value="0"/>
+</Structure>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="OneShot" DataType="DINT" Radix="Decimal" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Day_CTR" DataType="COUNTER" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[[0,7,0]]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<Structure DataType="COUNTER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="7"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="CU" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CD" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="OV" DataType="BOOL" Value="0"/>
+<DataValueMember Name="UN" DataType="BOOL" Value="0"/>
+</Structure>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Current_Week_Flow_temp" DataType="REAL" Radix="Float" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0.00000000e+000]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="0.0"/>
+</DefaultData>
+</LocalTag>
+<LocalTag Name="Current_Month_Flow_temp" DataType="REAL" Radix="Float" ExternalAccess="None">
+<DefaultData Format="L5K">
+<![CDATA[0.00000000e+000]]>
+</DefaultData>
+<DefaultData Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="0.0"/>
+</DefaultData>
+</LocalTag>
+</LocalTags>
+<Routines>
+<Routine Name="Logic" Type="RLL">
+<RLLContent>
+<Rung Number="0" Type="N">
+<Text>
+<![CDATA[GSV(WallClockTime,,LocalDateTime,DATE_TIME[0]);]]>
+</Text>
+</Rung>
+<Rung Number="1" Type="N">
+<Text>
+<![CDATA[MOV(Daily_Flow,Current_Day)ADD(Daily_Flow,Current_Week_Flow_temp,Current_Week_Flow)ADD(Daily_Flow,Current_Month_Flow_temp,Current_Month_Flow);]]>
+</Text>
+</Rung>
+<Rung Number="2" Type="N">
+<Text>
+<![CDATA[EQU(DATE_TIME[3],23)EQU(DATE_TIME[4],59)EQU(DATE_TIME[5],59)GEQ(DATE_TIME[6],500000)ONS(OneShot.15)FFL(Daily_Flow,Daily_FIFO[0],Daily_FIFO_CTL,?,?)[[MOV(Current_Day,Previous_Day_Flow) ,MOV(Current_Week_Flow,Current_Week_Flow_temp) MOV(Current_Month_Flow,Current_Month_Flow_temp) ] CTU(Day_CTR,?,?) ,[LES(Daily_FIFO_CTL.POS,8) MOV(Daily_FIFO_CTL.POS,Weekly_Flow_AVG_CTL.LEN) ,GEQ(Daily_FIFO_CTL.POS,8) MOV(7,Weekly_Flow_AVG_CTL.LEN) ,AVE(Daily_FIFO[0],0,Daily_Flow_AVG,Weekly_Flow_AVG_CTL,?,?) ] ];]]>
+</Text>
+</Rung>
+<Rung Number="3" Type="N">
+<Text>
+<![CDATA[XIC(Day_CTR.DN)MOV(Current_Week_Flow,Previous_Week_Flow)MOV(0,Current_Week_Flow_temp)MOV(0,Current_Week_Flow)RES(Day_CTR);]]>
+</Text>
+</Rung>
+<Rung Number="4" Type="N">
+<Text>
+<![CDATA[XIC(Daily_FIFO_CTL.DN)FFU(Daily_FIFO[0],FIFO_Scrap,Daily_FIFO_CTL,?,?);]]>
+</Text>
+</Rung>
+<Rung Number="5" Type="N">
+<Text>
+<![CDATA[EQU(DATE_TIME[3],0)EQU(DATE_TIME[4],0)EQU(DATE_TIME[5],0)[EQU(Daily_FIFO_CTL.POS,1) MOV(Daily_FIFO[0],Day1) ,EQU(Daily_FIFO_CTL.POS,2) MOV(Daily_FIFO[0],Day2) MOV(Daily_FIFO[1],Day1) ,EQU(Daily_FIFO_CTL.POS,3) MOV(Daily_FIFO[0],Day3) MOV(Daily_FIFO[1],Day2) MOV(Daily_FIFO[2],Day1) ,EQU(Daily_FIFO_CTL.POS,4) MOV(Daily_FIFO[0],Day4) MOV(Daily_FIFO[1],Day3) MOV(Daily_FIFO[2],Day2) MOV(Daily_FIFO[3],Day1) ,EQU(Daily_FIFO_CTL.POS,5) MOV(Daily_FIFO[0],Day5) MOV(Daily_FIFO[1],Day4) MOV(Daily_FIFO[2],Day3) MOV(Daily_FIFO[3],Day2) MOV(Daily_FIFO[4],Day1) ,EQU(Daily_FIFO_CTL.POS,6) MOV(Daily_FIFO[0],Day6) MOV(Daily_FIFO[1],Day5) MOV(Daily_FIFO[2],Day4) MOV(Daily_FIFO[3],Day3) MOV(Daily_FIFO[4],Day2) MOV(Daily_FIFO[5],Day1) ,EQU(Daily_FIFO_CTL.POS,7) MOV(Daily_FIFO[0],Day7) MOV(Daily_FIFO[1],Day6) MOV(Daily_FIFO[2],Day5) MOV(Daily_FIFO[3],Day4) MOV(Daily_FIFO[4],Day3) MOV(Daily_FIFO[5],Day2) MOV(Daily_FIFO[6],Day1) ,EQU(Daily_FIFO_CTL.POS,8) MOV(Daily_FIFO[0],Day8) MOV(Daily_FIFO[1],Day7) MOV(Daily_FIFO[2],Day6) MOV(Daily_FIFO[3],Day5) MOV(Daily_FIFO[4],Day4) MOV(Daily_FIFO[5],Day3) MOV(Daily_FIFO[6],Day2) MOV(Daily_FIFO[7],Day1) ];]]>
+</Text>
+</Rung>
+<Rung Number="6" Type="N">
+<Text>
+<![CDATA[EQU(Current_Month,0)MOV(DATE_TIME[1],Current_Month);]]>
+</Text>
+</Rung>
+<Rung Number="7" Type="N">
+<Text>
+<![CDATA[NEQ(DATE_TIME[1],Current_Month)MOV(DATE_TIME[1],Month_FIFO_CTL.POS)FFL(Current_Month_Flow,Month_FIFO[0],Month_FIFO_CTL,?,?)MOV(0,Current_Month_Flow_temp)MOV(0,Current_Month_Flow)MOV(DATE_TIME[1],Current_Month);]]>
+</Text>
+</Rung>
+<Rung Number="8" Type="N">
+<Text>
+<![CDATA[EQU(Month_FIFO_CTL.POS,2)ONS(OneShot.1)MOV(Month_FIFO[1],Month1);]]>
+</Text>
+</Rung>
+<Rung Number="9" Type="N">
+<Text>
+<![CDATA[EQU(DATE_TIME[1],1)MOV(Current_Month_Flow,Month1);]]>
+</Text>
+</Rung>
+<Rung Number="10" Type="N">
+<Text>
+<![CDATA[EQU(Month_FIFO_CTL.POS,3)ONS(OneShot.2)MOV(Month_FIFO[2],Month2);]]>
+</Text>
+</Rung>
+<Rung Number="11" Type="N">
+<Text>
+<![CDATA[EQU(DATE_TIME[1],2)MOV(Current_Month_Flow,Month2);]]>
+</Text>
+</Rung>
+<Rung Number="12" Type="N">
+<Text>
+<![CDATA[EQU(Month_FIFO_CTL.POS,4)ONS(OneShot.3)MOV(Month_FIFO[3],Month3);]]>
+</Text>
+</Rung>
+<Rung Number="13" Type="N">
+<Text>
+<![CDATA[EQU(DATE_TIME[1],3)MOV(Current_Month_Flow,Month3);]]>
+</Text>
+</Rung>
+<Rung Number="14" Type="N">
+<Text>
+<![CDATA[EQU(Month_FIFO_CTL.POS,5)ONS(OneShot.4)MOV(Month_FIFO[4],Month4);]]>
+</Text>
+</Rung>
+<Rung Number="15" Type="N">
+<Text>
+<![CDATA[EQU(DATE_TIME[1],4)MOV(Current_Month_Flow,Month4);]]>
+</Text>
+</Rung>
+<Rung Number="16" Type="N">
+<Text>
+<![CDATA[EQU(Month_FIFO_CTL.POS,6)ONS(OneShot.5)MOV(Month_FIFO[5],Month5);]]>
+</Text>
+</Rung>
+<Rung Number="17" Type="N">
+<Text>
+<![CDATA[EQU(DATE_TIME[1],5)MOV(Current_Month_Flow,Month5);]]>
+</Text>
+</Rung>
+<Rung Number="18" Type="N">
+<Text>
+<![CDATA[EQU(Month_FIFO_CTL.POS,7)ONS(OneShot.6)MOV(Month_FIFO[6],Month6);]]>
+</Text>
+</Rung>
+<Rung Number="19" Type="N">
+<Text>
+<![CDATA[EQU(DATE_TIME[1],6)MOV(Current_Month_Flow,Month6);]]>
+</Text>
+</Rung>
+<Rung Number="20" Type="N">
+<Text>
+<![CDATA[EQU(Month_FIFO_CTL.POS,8)ONS(OneShot.7)MOV(Month_FIFO[7],Month7);]]>
+</Text>
+</Rung>
+<Rung Number="21" Type="N">
+<Text>
+<![CDATA[EQU(DATE_TIME[1],7)MOV(Current_Month_Flow,Month7);]]>
+</Text>
+</Rung>
+<Rung Number="22" Type="N">
+<Text>
+<![CDATA[EQU(Month_FIFO_CTL.POS,9)ONS(OneShot.8)MOV(Month_FIFO[8],Month8);]]>
+</Text>
+</Rung>
+<Rung Number="23" Type="N">
+<Text>
+<![CDATA[EQU(DATE_TIME[1],8)MOV(Current_Month_Flow,Month8);]]>
+</Text>
+</Rung>
+<Rung Number="24" Type="N">
+<Text>
+<![CDATA[EQU(Month_FIFO_CTL.POS,10)ONS(OneShot.9)MOV(Month_FIFO[9],Month9);]]>
+</Text>
+</Rung>
+<Rung Number="25" Type="N">
+<Text>
+<![CDATA[EQU(DATE_TIME[1],9)MOV(Current_Month_Flow,Month9);]]>
+</Text>
+</Rung>
+<Rung Number="26" Type="N">
+<Text>
+<![CDATA[EQU(Month_FIFO_CTL.POS,11)ONS(OneShot.10)MOV(Month_FIFO[10],Month10);]]>
+</Text>
+</Rung>
+<Rung Number="27" Type="N">
+<Text>
+<![CDATA[EQU(DATE_TIME[1],10)MOV(Current_Month_Flow,Month10);]]>
+</Text>
+</Rung>
+<Rung Number="28" Type="N">
+<Text>
+<![CDATA[EQU(Month_FIFO_CTL.POS,12)ONS(OneShot.11)MOV(Month_FIFO[11],Month11);]]>
+</Text>
+</Rung>
+<Rung Number="29" Type="N">
+<Text>
+<![CDATA[EQU(DATE_TIME[1],11)MOV(Current_Month_Flow,Month11);]]>
+</Text>
+</Rung>
+<Rung Number="30" Type="N">
+<Text>
+<![CDATA[EQU(Month_FIFO_CTL.POS,1)ONS(OneShot.12)MOV(Month_FIFO[12],Month12);]]>
+</Text>
+</Rung>
+<Rung Number="31" Type="N">
+<Text>
+<![CDATA[EQU(DATE_TIME[1],12)MOV(Current_Month_Flow,Month12);]]>
+</Text>
+</Rung>
+<Rung Number="32" Type="N">
+<Text>
+<![CDATA[CPT(Anual_Flow,Month1+Month2+Month3+Month4+Month5+Month6+Month7+Month8+Month9+Month10+Month11+Month12);]]>
+</Text>
+</Rung>
+</RLLContent>
+</Routine>
+</Routines>
+</AddOnInstructionDefinition>
+</AddOnInstructionDefinitions>
+<Tags Use="Context">
+<Tag Name="_200_FIT_01_Flow_AOI" TagType="Base" DataType="AOI_Flow_Logging" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[[3,1.68676230e+004,0.00000000e+000,1.68676230e+004,3.05474297e+004,3.05474297e+004,2.52129688e+004
+		,3.11519531e+004,2.44153652e+004,2.38942988e+004,2.49597715e+004,2.49975938e+004,2.45026758e+004
+		,2.55626621e+004,1.03779977e+005,1.72241109e+005,3.25450000e+005,9.86468750e+005,9.62598375e+005
+		,3.25450000e+005,1.96816938e+006,2.22079300e+006,1.77984750e+006,1.06453650e+006,9.72327188e+005
+		,2.29230525e+006,1.35569213e+006,1.38635863e+006,1.24408975e+006,1.65586370e+007,[2026,3,13
+		,15,14,28,221861],[-1070462105,100,94],[0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000
+		,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000
+		,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000
+		,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000
+		,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000
+		,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000
+		,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000
+		,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000
+		,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000
+		,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000
+		,0.00000000e+000,0.00000000e+000],[0,60,0],0.00000000e+000,[0,60,0],25017,[0,60,0],[2.45026758e+004,2.49975938e+004
+		,2.49597715e+004,2.38942988e+004,2.44153652e+004,3.11519531e+004,2.52129688e+004,3.05474297e+004
+		,0.00000000e+000],[0,9,8],[0.00000000e+000,1.24409000e+006,9.86468750e+005,9.62598375e+005,1.96353538e+006
+		,1.96816938e+006,2.22079300e+006,1.77984750e+006,1.06453650e+006,9.72327188e+005,2.29230525e+006
+		,1.35569213e+006,0.00000000e+000],[0,12,4],3,0,[0,7,0],8,[0,7,3],8.69123516e+004,3.08582375e+005]]]>
+</Data>
+<Data Format="Decorated">
+<Structure DataType="AOI_Flow_Logging">
+<DataValueMember Name="EnableIn" DataType="BOOL" Value="1"/>
+<DataValueMember Name="EnableOut" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Daily_Flow" DataType="REAL" Radix="Float" Value="16867.623"/>
+<DataValueMember Name="Flow_Source" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="Current_Day" DataType="REAL" Radix="Float" Value="16867.623"/>
+<DataValueMember Name="Previous_Day_Flow" DataType="REAL" Radix="Float" Value="30547.43"/>
+<DataValueMember Name="Day1" DataType="REAL" Radix="Float" Value="30547.43"/>
+<DataValueMember Name="Day2" DataType="REAL" Radix="Float" Value="25212.969"/>
+<DataValueMember Name="Day3" DataType="REAL" Radix="Float" Value="31151.953"/>
+<DataValueMember Name="Day4" DataType="REAL" Radix="Float" Value="24415.365"/>
+<DataValueMember Name="Day5" DataType="REAL" Radix="Float" Value="23894.299"/>
+<DataValueMember Name="Day6" DataType="REAL" Radix="Float" Value="24959.771"/>
+<DataValueMember Name="Day7" DataType="REAL" Radix="Float" Value="24997.594"/>
+<DataValueMember Name="Day8" DataType="REAL" Radix="Float" Value="24502.676"/>
+<DataValueMember Name="Daily_Flow_AVG" DataType="REAL" Radix="Float" Value="25562.662"/>
+<DataValueMember Name="Current_Week_Flow" DataType="REAL" Radix="Float" Value="103779.98"/>
+<DataValueMember Name="Previous_Week_Flow" DataType="REAL" Radix="Float" Value="172241.11"/>
+<DataValueMember Name="Current_Month_Flow" DataType="REAL" Radix="Float" Value="325450.0"/>
+<DataValueMember Name="Month1" DataType="REAL" Radix="Float" Value="986468.75"/>
+<DataValueMember Name="Month2" DataType="REAL" Radix="Float" Value="962598.4"/>
+<DataValueMember Name="Month3" DataType="REAL" Radix="Float" Value="325450.0"/>
+<DataValueMember Name="Month4" DataType="REAL" Radix="Float" Value="1968169.4"/>
+<DataValueMember Name="Month5" DataType="REAL" Radix="Float" Value="2220793.0"/>
+<DataValueMember Name="Month6" DataType="REAL" Radix="Float" Value="1779847.5"/>
+<DataValueMember Name="Month7" DataType="REAL" Radix="Float" Value="1064536.5"/>
+<DataValueMember Name="Month8" DataType="REAL" Radix="Float" Value="972327.2"/>
+<DataValueMember Name="Month9" DataType="REAL" Radix="Float" Value="2292305.3"/>
+<DataValueMember Name="Month10" DataType="REAL" Radix="Float" Value="1355692.1"/>
+<DataValueMember Name="Month11" DataType="REAL" Radix="Float" Value="1386358.6"/>
+<DataValueMember Name="Month12" DataType="REAL" Radix="Float" Value="1244089.8"/>
+<DataValueMember Name="Anual_Flow" DataType="REAL" Radix="Float" Value="16558637.0"/>
+</Structure>
+</Data>
+</Tag>
+<Tag Name="_200_LHS_01_DALM1" TagType="Base" DataType="ALARM_DIGITAL" ExternalAccess="Read/Write">
+<Data Format="Alarm">
+<AlarmDigitalParameters Severity="500" MinDurationPRE="1000" ShelveDuration="0" MaxShelveDuration="0" ProgTime="DT#1970-01-01-00:00:00.000_000Z" EnableIn="false" In="false" InFault="false" Condition="true" AckRequired="true" Latched="false"
+ ProgAck="false" OperAck="false" ProgReset="false" OperReset="false" ProgSuppress="false" OperSuppress="false" ProgUnsuppress="false" OperUnsuppress="false" OperShelve="false" ProgUnshelve="false" OperUnshelve="false"
+ ProgDisable="false" OperDisable="false" ProgEnable="true" OperEnable="false" AlarmCountReset="false" UseProgTime="false"/>
+<AlarmConfig>
+<Messages>
+<Message Type="AM">
+<Text Lang="en-US">
+<![CDATA[Liquit Detected in Drywell]]>
+</Text>
+</Message>
+</Messages>
+</AlarmConfig>
+</Data>
+</Tag>
+<Tag Name="_200_LT_01_ALM" TagType="Base" DataType="ALARM_ANALOG" ExternalAccess="Read/Write">
+<Data Format="Alarm">
+<AlarmAnalogParameters EnableIn="true" InFault="false" HHEnabled="true" HEnabled="true" LEnabled="true" LLEnabled="false" AckRequired="true" ProgAckAll="false" OperAckAll="false" HHProgAck="false" HHOperAck="false"
+ HProgAck="false" HOperAck="false" LProgAck="false" LOperAck="false" LLProgAck="false" LLOperAck="false" ROCPosProgAck="false" ROCPosOperAck="false" ROCNegProgAck="false" ROCNegOperAck="false" ProgSuppress="false"
+ OperSuppress="false" ProgUnsuppress="false" OperUnsuppress="false" HHOperShelve="false" HOperShelve="false" LOperShelve="false" LLOperShelve="false" ROCPosOperShelve="false" ROCNegOperShelve="false" ProgUnshelveAll="false" HHOperUnshelve="false"
+ HOperUnshelve="false" LOperUnshelve="false" LLOperUnshelve="false" ROCPosOperUnshelve="false" ROCNegOperUnshelve="false" ProgDisable="false" OperDisable="false" ProgEnable="true" OperEnable="false" AlarmCountReset="false" HHMinDurationEnable="true"
+ HMinDurationEnable="true" LMinDurationEnable="true" LLMinDurationEnable="true" In="19346.273" HHLimit="30000.0" HHSeverity="500" HLimit="30000.0" HSeverity="500" LLimit="8000.0" LSeverity="500" LLLimit="5000.0"
+ LLSeverity="500" MinDurationPRE="30000" ShelveDuration="0" MaxShelveDuration="0" Deadband="0.0" ROCPosLimit="0.0" ROCPosSeverity="500" ROCNegLimit="0.0" ROCNegSeverity="500" ROCPeriod="0.0"/>
+<AlarmConfig>
+<Messages>
+<Message Type="HH">
+<Text Lang="en-US">
+<![CDATA[Blend Tank Overflow]]>
+</Text>
+</Message>
+<Message Type="H">
+<Text Lang="en-US">
+<![CDATA[High Level - Blend Tank]]>
+</Text>
+</Message>
+<Message Type="L">
+<Text Lang="en-US">
+<![CDATA[Low Level - Blend Tank]]>
+</Text>
+</Message>
+</Messages>
+</AlarmConfig>
+</Data>
+</Tag>
+<Tag Name="_200_OpTransfer_Temp" TagType="Base" DataType="REAL" Radix="Float" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[1.65540810e+007]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="16554081.0"/>
+</Data>
+</Tag>
+<Tag Name="_200_Pump_LowFlow" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="_200_Pump_NoFlow" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="_200_RLP_FWD_CMD" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[1]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="1"/>
+</Data>
+</Tag>
+<Tag Name="_200_RLP_REV_CMD" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="_250_LHS_01_DALM" TagType="Base" DataType="ALARM_DIGITAL" ExternalAccess="Read/Write">
+<Data Format="Alarm">
+<AlarmDigitalParameters Severity="500" MinDurationPRE="1000" ShelveDuration="0" MaxShelveDuration="0" ProgTime="DT#1970-01-01-00:00:00.000_000Z" EnableIn="false" In="false" InFault="false" Condition="true" AckRequired="true" Latched="false"
+ ProgAck="false" OperAck="false" ProgReset="false" OperReset="false" ProgSuppress="false" OperSuppress="false" ProgUnsuppress="false" OperUnsuppress="false" OperShelve="false" ProgUnshelve="false" OperUnshelve="false"
+ ProgDisable="false" OperDisable="false" ProgEnable="true" OperEnable="false" AlarmCountReset="false" UseProgTime="false"/>
+<AlarmConfig>
+<Messages>
+<Message Type="AM">
+<Text Lang="en-US">
+<![CDATA[Manure Tank Overflow]]>
+</Text>
+</Message>
+</Messages>
+</AlarmConfig>
+</Data>
+</Tag>
+<Tag Name="_250_LT_01_ALM" TagType="Base" DataType="ALARM_ANALOG" ExternalAccess="Read/Write">
+<Data Format="Alarm">
+<AlarmAnalogParameters EnableIn="true" InFault="false" HHEnabled="true" HEnabled="true" LEnabled="true" LLEnabled="true" AckRequired="true" ProgAckAll="false" OperAckAll="false" HHProgAck="false" HHOperAck="false"
+ HProgAck="false" HOperAck="false" LProgAck="false" LOperAck="false" LLProgAck="false" LLOperAck="false" ROCPosProgAck="false" ROCPosOperAck="false" ROCNegProgAck="false" ROCNegOperAck="false" ProgSuppress="false"
+ OperSuppress="false" ProgUnsuppress="false" OperUnsuppress="false" HHOperShelve="false" HOperShelve="false" LOperShelve="false" LLOperShelve="false" ROCPosOperShelve="false" ROCNegOperShelve="false" ProgUnshelveAll="false" HHOperUnshelve="false"
+ HOperUnshelve="false" LOperUnshelve="false" LLOperUnshelve="false" ROCPosOperUnshelve="false" ROCNegOperUnshelve="false" ProgDisable="false" OperDisable="false" ProgEnable="true" OperEnable="false" AlarmCountReset="false" HHMinDurationEnable="true"
+ HMinDurationEnable="true" LMinDurationEnable="true" LLMinDurationEnable="true" In="10620.778" HHLimit="18750.0" HHSeverity="500" HLimit="17500.0" HSeverity="500" LLimit="2800.0" LSeverity="500" LLLimit="2200.0"
+ LLSeverity="500" MinDurationPRE="30000" ShelveDuration="0" MaxShelveDuration="0" Deadband="100.0" ROCPosLimit="0.0" ROCPosSeverity="500" ROCNegLimit="0.0" ROCNegSeverity="500" ROCPeriod="0.0"/>
+<AlarmConfig>
+<Messages>
+<Message Type="HH">
+<Text Lang="en-US">
+<![CDATA[Manure Tank Overflow]]>
+</Text>
+</Message>
+<Message Type="H">
+<Text Lang="en-US">
+<![CDATA[High Level - Manure Tank]]>
+</Text>
+</Message>
+<Message Type="L">
+<Text Lang="en-US">
+<![CDATA[Manure Tank Low]]>
+</Text>
+</Message>
+<Message Type="LL">
+<Text Lang="en-US">
+<![CDATA[Manure Tank Empty]]>
+</Text>
+</Message>
+</Messages>
+</AlarmConfig>
+</Data>
+</Tag>
+<Tag Name="_300_LHS_01_DALM" TagType="Base" DataType="ALARM_DIGITAL" ExternalAccess="Read/Write">
+<Data Format="Alarm">
+<AlarmDigitalParameters Severity="500" MinDurationPRE="3000" ShelveDuration="0" MaxShelveDuration="0" ProgTime="DT#1970-01-01-00:00:00.000_000Z" EnableIn="false" In="false" InFault="false" Condition="true" AckRequired="true" Latched="false"
+ ProgAck="false" OperAck="false" ProgReset="false" OperReset="false" ProgSuppress="false" OperSuppress="false" ProgUnsuppress="false" OperUnsuppress="false" OperShelve="false" ProgUnshelve="false" OperUnshelve="false"
+ ProgDisable="false" OperDisable="false" ProgEnable="true" OperEnable="false" AlarmCountReset="false" UseProgTime="false"/>
+<AlarmConfig>
+<Messages>
+<Message Type="AM">
+<Text Lang="en-US">
+<![CDATA[Substrate Tank Overflow]]>
+</Text>
+</Message>
+</Messages>
+</AlarmConfig>
+</Data>
+</Tag>
+<Tag Name="_300_LT_01_ALM" TagType="Base" DataType="ALARM_ANALOG" ExternalAccess="Read/Write">
+<Data Format="Alarm">
+<AlarmAnalogParameters EnableIn="true" InFault="false" HHEnabled="true" HEnabled="true" LEnabled="true" LLEnabled="true" AckRequired="true" ProgAckAll="false" OperAckAll="false" HHProgAck="false" HHOperAck="false"
+ HProgAck="false" HOperAck="false" LProgAck="false" LOperAck="false" LLProgAck="false" LLOperAck="false" ROCPosProgAck="false" ROCPosOperAck="false" ROCNegProgAck="false" ROCNegOperAck="false" ProgSuppress="false"
+ OperSuppress="false" ProgUnsuppress="false" OperUnsuppress="false" HHOperShelve="false" HOperShelve="false" LOperShelve="false" LLOperShelve="false" ROCPosOperShelve="false" ROCNegOperShelve="false" ProgUnshelveAll="false" HHOperUnshelve="false"
+ HOperUnshelve="false" LOperUnshelve="false" LLOperUnshelve="false" ROCPosOperUnshelve="false" ROCNegOperUnshelve="false" ProgDisable="false" OperDisable="false" ProgEnable="true" OperEnable="false" AlarmCountReset="false" HHMinDurationEnable="true"
+ HMinDurationEnable="true" LMinDurationEnable="true" LLMinDurationEnable="true" In="43943.234" HHLimit="55000.0" HHSeverity="500" HLimit="53000.0" HSeverity="500" LLimit="-3.0" LSeverity="500" LLLimit="-5.0"
+ LLSeverity="500" MinDurationPRE="30000" ShelveDuration="0" MaxShelveDuration="0" Deadband="50.0" ROCPosLimit="0.0" ROCPosSeverity="500" ROCNegLimit="0.0" ROCNegSeverity="500" ROCPeriod="0.0"/>
+<AlarmConfig>
+<Messages>
+<Message Type="HH">
+<Text Lang="en-US">
+<![CDATA[Substrate Tank Overflow]]>
+</Text>
+</Message>
+<Message Type="H">
+<Text Lang="en-US">
+<![CDATA[High Level - Substrate Tank]]>
+</Text>
+</Message>
+<Message Type="L">
+<Text Lang="en-US">
+<![CDATA[Substrate Tank Low]]>
+</Text>
+</Message>
+<Message Type="LL">
+<Text Lang="en-US">
+<![CDATA[Substrate Tank Empty]]>
+</Text>
+</Message>
+</Messages>
+</AlarmConfig>
+</Data>
+</Tag>
+<Tag Name="_310_LHS_01_DALM" TagType="Base" DataType="ALARM_DIGITAL" ExternalAccess="Read/Write">
+<Data Format="Alarm">
+<AlarmDigitalParameters Severity="500" MinDurationPRE="3000" ShelveDuration="0" MaxShelveDuration="0" ProgTime="DT#1970-01-01-00:00:00.000_000Z" EnableIn="false" In="false" InFault="false" Condition="true" AckRequired="true" Latched="false"
+ ProgAck="false" OperAck="false" ProgReset="false" OperReset="false" ProgSuppress="false" OperSuppress="false" ProgUnsuppress="false" OperUnsuppress="false" OperShelve="false" ProgUnshelve="false" OperUnshelve="false"
+ ProgDisable="false" OperDisable="false" ProgEnable="true" OperEnable="false" AlarmCountReset="false" UseProgTime="false"/>
+<AlarmConfig>
+<Messages>
+<Message Type="AM">
+<Text Lang="en-US">
+<![CDATA[FOG Tank Overflow]]>
+</Text>
+</Message>
+</Messages>
+</AlarmConfig>
+</Data>
+</Tag>
+<Tag Name="_310_LT_01_ALM" TagType="Base" DataType="ALARM_ANALOG" ExternalAccess="Read/Write">
+<Data Format="Alarm">
+<AlarmAnalogParameters EnableIn="true" InFault="false" HHEnabled="true" HEnabled="true" LEnabled="true" LLEnabled="true" AckRequired="true" ProgAckAll="false" OperAckAll="false" HHProgAck="false" HHOperAck="false"
+ HProgAck="false" HOperAck="false" LProgAck="false" LOperAck="false" LLProgAck="false" LLOperAck="false" ROCPosProgAck="false" ROCPosOperAck="false" ROCNegProgAck="false" ROCNegOperAck="false" ProgSuppress="false"
+ OperSuppress="false" ProgUnsuppress="false" OperUnsuppress="false" HHOperShelve="false" HOperShelve="false" LOperShelve="false" LLOperShelve="false" ROCPosOperShelve="false" ROCNegOperShelve="false" ProgUnshelveAll="false" HHOperUnshelve="false"
+ HOperUnshelve="false" LOperUnshelve="false" LLOperUnshelve="false" ROCPosOperUnshelve="false" ROCNegOperUnshelve="false" ProgDisable="false" OperDisable="false" ProgEnable="true" OperEnable="false" AlarmCountReset="false" HHMinDurationEnable="true"
+ HMinDurationEnable="true" LMinDurationEnable="true" LLMinDurationEnable="true" In="33381.22" HHLimit="55000.0" HHSeverity="500" HLimit="53000.0" HSeverity="500" LLimit="1500.0" LSeverity="500" LLLimit="1000.0"
+ LLSeverity="500" MinDurationPRE="30000" ShelveDuration="0" MaxShelveDuration="0" Deadband="100.0" ROCPosLimit="0.0" ROCPosSeverity="500" ROCNegLimit="0.0" ROCNegSeverity="500" ROCPeriod="0.0"/>
+<AlarmConfig>
+<Messages>
+<Message Type="HH">
+<Text Lang="en-US">
+<![CDATA[FOG Tank Overflow]]>
+</Text>
+</Message>
+<Message Type="H">
+<Text Lang="en-US">
+<![CDATA[High Level - FOG Tank]]>
+</Text>
+</Message>
+<Message Type="L">
+<Text Lang="en-US">
+<![CDATA[FOG Tank Low]]>
+</Text>
+</Message>
+<Message Type="LL">
+<Text Lang="en-US">
+<![CDATA[FOG Tank Empty]]>
+</Text>
+</Message>
+</Messages>
+</AlarmConfig>
+</Data>
+</Tag>
+<Tag Name="_400_FIT_01_Log_AOI" TagType="Base" DataType="AOI_Flow_Logging" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[[3,7.22545078e+004,0.00000000e+000,7.22545078e+004,8.55822031e+004,8.55822031e+004,1.04514000e+005
+		,8.14508200e+004,8.00406953e+004,4.63826211e+004,5.15370469e+004,8.95759688e+004,7.36582422e+004
+		,7.22440078e+004,3.43801500e+005,4.93496500e+005,9.49722813e+005,2.05740550e+006,2.24858550e+006
+		,9.49722813e+005,3.63588050e+006,3.24717450e+006,2.66721150e+006,3.73070125e+006,2.55155450e+006
+		,2.44762850e+006,3.07335425e+006,2.37069550e+006,2.32816150e+006,3.13080760e+007,[2026,3,13
+		,15,14,40,934196],[-1070441221,100,46],[0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000
+		,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000
+		,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000
+		,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000
+		,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000
+		,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000
+		,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000
+		,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000
+		,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000
+		,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000
+		,0.00000000e+000,0.00000000e+000],[0,60,0],0.00000000e+000,[0,60,0],83063,[0,60,0],[7.36582422e+004,8.95759688e+004
+		,5.15370469e+004,4.63826211e+004,8.00406953e+004,8.14508200e+004,1.04514000e+005,8.55822031e+004
+		,0.00000000e+000],[0,9,8],[0.00000000e+000,2.32816150e+006,2.05740550e+006,2.24858550e+006,3.10860575e+006
+		,3.63588050e+006,3.24717450e+006,2.66721150e+006,3.73070125e+006,2.55155450e+006,2.44762850e+006
+		,3.07335425e+006,0.00000000e+000],[0,12,4],3,0,[0,7,0],8,[0,7,3],2.71547000e+005,8.77468313e+005]]]>
+</Data>
+<Data Format="Decorated">
+<Structure DataType="AOI_Flow_Logging">
+<DataValueMember Name="EnableIn" DataType="BOOL" Value="1"/>
+<DataValueMember Name="EnableOut" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Daily_Flow" DataType="REAL" Radix="Float" Value="72254.51"/>
+<DataValueMember Name="Flow_Source" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="Current_Day" DataType="REAL" Radix="Float" Value="72254.51"/>
+<DataValueMember Name="Previous_Day_Flow" DataType="REAL" Radix="Float" Value="85582.2"/>
+<DataValueMember Name="Day1" DataType="REAL" Radix="Float" Value="85582.2"/>
+<DataValueMember Name="Day2" DataType="REAL" Radix="Float" Value="104514.0"/>
+<DataValueMember Name="Day3" DataType="REAL" Radix="Float" Value="81450.82"/>
+<DataValueMember Name="Day4" DataType="REAL" Radix="Float" Value="80040.695"/>
+<DataValueMember Name="Day5" DataType="REAL" Radix="Float" Value="46382.62"/>
+<DataValueMember Name="Day6" DataType="REAL" Radix="Float" Value="51537.047"/>
+<DataValueMember Name="Day7" DataType="REAL" Radix="Float" Value="89575.97"/>
+<DataValueMember Name="Day8" DataType="REAL" Radix="Float" Value="73658.24"/>
+<DataValueMember Name="Daily_Flow_AVG" DataType="REAL" Radix="Float" Value="72244.01"/>
+<DataValueMember Name="Current_Week_Flow" DataType="REAL" Radix="Float" Value="343801.5"/>
+<DataValueMember Name="Previous_Week_Flow" DataType="REAL" Radix="Float" Value="493496.5"/>
+<DataValueMember Name="Current_Month_Flow" DataType="REAL" Radix="Float" Value="949722.8"/>
+<DataValueMember Name="Month1" DataType="REAL" Radix="Float" Value="2057405.5"/>
+<DataValueMember Name="Month2" DataType="REAL" Radix="Float" Value="2248585.5"/>
+<DataValueMember Name="Month3" DataType="REAL" Radix="Float" Value="949722.8"/>
+<DataValueMember Name="Month4" DataType="REAL" Radix="Float" Value="3635880.5"/>
+<DataValueMember Name="Month5" DataType="REAL" Radix="Float" Value="3247174.5"/>
+<DataValueMember Name="Month6" DataType="REAL" Radix="Float" Value="2667211.5"/>
+<DataValueMember Name="Month7" DataType="REAL" Radix="Float" Value="3730701.3"/>
+<DataValueMember Name="Month8" DataType="REAL" Radix="Float" Value="2551554.5"/>
+<DataValueMember Name="Month9" DataType="REAL" Radix="Float" Value="2447628.5"/>
+<DataValueMember Name="Month10" DataType="REAL" Radix="Float" Value="3073354.3"/>
+<DataValueMember Name="Month11" DataType="REAL" Radix="Float" Value="2370695.5"/>
+<DataValueMember Name="Month12" DataType="REAL" Radix="Float" Value="2328161.5"/>
+<DataValueMember Name="Anual_Flow" DataType="REAL" Radix="Float" Value="31308076.0"/>
+</Structure>
+</Data>
+</Tag>
+<Tag Name="_400_FIT_02_Log_AOI" TagType="Base" DataType="AOI_Flow_Logging" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[[3,1.59572000e+004,0.00000000e+000,1.59572000e+004,2.47465996e+004,2.47465996e+004,2.56855977e+004
+		,2.50894551e+004,2.47149100e+004,2.42324590e+004,2.52884141e+004,2.59779531e+004,2.57961699e+004
+		,2.53621895e+004,9.14788594e+004,1.78464188e+005,3.21681563e+005,7.94151375e+005,7.27985375e+005
+		,3.21681563e+005,1.16765225e+006,1.05151750e+006,9.02571563e+005,8.02085750e+005,8.66301063e+005
+		,6.48505875e+005,6.87069375e+005,6.89615438e+005,6.88433813e+005,9.34757100e+006,[2026,3,13
+		,15,15,30,413664],[-1070442595,100,23],[0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000
+		,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000
+		,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000
+		,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000
+		,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000
+		,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000
+		,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000
+		,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000
+		,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000
+		,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000,0.00000000e+000
+		,0.00000000e+000,0.00000000e+000],[0,60,0],0.00000000e+000,[0,60,0],26436,[0,60,0],[2.57961699e+004,2.59779531e+004
+		,2.52884141e+004,2.42324590e+004,2.47149100e+004,2.50894551e+004,2.56855977e+004,2.47465996e+004
+		,0.00000000e+000],[0,9,8],[0.00000000e+000,6.88433813e+005,7.94151375e+005,7.27985375e+005,1.17491988e+006
+		,1.16765225e+006,1.05151750e+006,9.02571563e+005,8.02085750e+005,8.66301063e+005,6.48505875e+005
+		,6.87069375e+005,0.00000000e+000],[0,12,4],3,0,[0,7,0],8,[0,7,3],7.55216563e+004,3.05724375e+005]]]>
+</Data>
+<Data Format="Decorated">
+<Structure DataType="AOI_Flow_Logging">
+<DataValueMember Name="EnableIn" DataType="BOOL" Value="1"/>
+<DataValueMember Name="EnableOut" DataType="BOOL" Value="1"/>
+<DataValueMember Name="Daily_Flow" DataType="REAL" Radix="Float" Value="15957.2"/>
+<DataValueMember Name="Flow_Source" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="Current_Day" DataType="REAL" Radix="Float" Value="15957.2"/>
+<DataValueMember Name="Previous_Day_Flow" DataType="REAL" Radix="Float" Value="24746.6"/>
+<DataValueMember Name="Day1" DataType="REAL" Radix="Float" Value="24746.6"/>
+<DataValueMember Name="Day2" DataType="REAL" Radix="Float" Value="25685.598"/>
+<DataValueMember Name="Day3" DataType="REAL" Radix="Float" Value="25089.455"/>
+<DataValueMember Name="Day4" DataType="REAL" Radix="Float" Value="24714.91"/>
+<DataValueMember Name="Day5" DataType="REAL" Radix="Float" Value="24232.459"/>
+<DataValueMember Name="Day6" DataType="REAL" Radix="Float" Value="25288.414"/>
+<DataValueMember Name="Day7" DataType="REAL" Radix="Float" Value="25977.953"/>
+<DataValueMember Name="Day8" DataType="REAL" Radix="Float" Value="25796.17"/>
+<DataValueMember Name="Daily_Flow_AVG" DataType="REAL" Radix="Float" Value="25362.19"/>
+<DataValueMember Name="Current_Week_Flow" DataType="REAL" Radix="Float" Value="91478.86"/>
+<DataValueMember Name="Previous_Week_Flow" DataType="REAL" Radix="Float" Value="178464.19"/>
+<DataValueMember Name="Current_Month_Flow" DataType="REAL" Radix="Float" Value="321681.56"/>
+<DataValueMember Name="Month1" DataType="REAL" Radix="Float" Value="794151.4"/>
+<DataValueMember Name="Month2" DataType="REAL" Radix="Float" Value="727985.4"/>
+<DataValueMember Name="Month3" DataType="REAL" Radix="Float" Value="321681.56"/>
+<DataValueMember Name="Month4" DataType="REAL" Radix="Float" Value="1167652.3"/>
+<DataValueMember Name="Month5" DataType="REAL" Radix="Float" Value="1051517.5"/>
+<DataValueMember Name="Month6" DataType="REAL" Radix="Float" Value="902571.56"/>
+<DataValueMember Name="Month7" DataType="REAL" Radix="Float" Value="802085.75"/>
+<DataValueMember Name="Month8" DataType="REAL" Radix="Float" Value="866301.06"/>
+<DataValueMember Name="Month9" DataType="REAL" Radix="Float" Value="648505.9"/>
+<DataValueMember Name="Month10" DataType="REAL" Radix="Float" Value="687069.4"/>
+<DataValueMember Name="Month11" DataType="REAL" Radix="Float" Value="689615.44"/>
+<DataValueMember Name="Month12" DataType="REAL" Radix="Float" Value="688433.8"/>
+<DataValueMember Name="Anual_Flow" DataType="REAL" Radix="Float" Value="9347571.0"/>
+</Structure>
+</Data>
+</Tag>
+<Tag Name="_400_OpTransfer_Temp" TagType="Base" DataType="REAL" Radix="Float" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[3.12795260e+007]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="31279526.0"/>
+</Data>
+</Tag>
+<Tag Name="_400_OpTransfer_Temp_2" TagType="Base" DataType="DINT" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[9343670]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="9343670"/>
+</Data>
+</Tag>
+<Tag Name="_400_PKGV01_UDT" TagType="Base" DataType="VALVE" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[[[0,'$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00'
+		],[0,'$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00'
+		],0,0,0.00000000e+000,0.00000000e+000,1,0.00000000e+000,1,2.00000000e+003,0,0.00000000e+000,1
+		,0.00000000e+000,1]]]>
+</Data>
+<Data Format="Decorated">
+<Structure DataType="VALVE">
+<StructureMember Name="ASSET_NAME" DataType="STRING">
+<DataValueMember Name="LEN" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="DATA" DataType="STRING" Radix="ASCII">
+<![CDATA[]]>
+</DataValueMember>
+</StructureMember>
+<StructureMember Name="DESCRIPTION" DataType="STRING">
+<DataValueMember Name="LEN" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="DATA" DataType="STRING" Radix="ASCII">
+<![CDATA[]]>
+</DataValueMember>
+</StructureMember>
+<DataValueMember Name="AAU" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ACAK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ACFR" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AFD" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AFDBL" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AFE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AFEBL" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CAE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CFR" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CHLIM" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="CLLIM" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="CME" DataType="BOOL" Value="1"/>
+<DataValueMember Name="CMM" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CMO" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="CMSK" DataType="BOOL" Value="1"/>
+<DataValueMember Name="CPI" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CPTP" DataType="REAL" Radix="Float" Value="2000.0"/>
+<DataValueMember Name="CSL" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IAO" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="IAOK" DataType="BOOL" Value="1"/>
+<DataValueMember Name="ICER" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ICO" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="ID" DataType="BOOL" Value="1"/>
+<DataValueMember Name="IE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IFLT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IFS" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IHLIM" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ILLIM" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IPI" DataType="BOOL" Value="0"/>
+</Structure>
+</Data>
+</Tag>
+<Tag Name="_400_PKGV02_UDT" TagType="Base" DataType="VALVE" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[[[0,'$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00'
+		],[0,'$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00'
+		],0,0,0.00000000e+000,0.00000000e+000,0,0.00000000e+000,1,2.00000000e+003,0,0.00000000e+000,1
+		,0.00000000e+000,1]]]>
+</Data>
+<Data Format="Decorated">
+<Structure DataType="VALVE">
+<StructureMember Name="ASSET_NAME" DataType="STRING">
+<DataValueMember Name="LEN" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="DATA" DataType="STRING" Radix="ASCII">
+<![CDATA[]]>
+</DataValueMember>
+</StructureMember>
+<StructureMember Name="DESCRIPTION" DataType="STRING">
+<DataValueMember Name="LEN" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="DATA" DataType="STRING" Radix="ASCII">
+<![CDATA[]]>
+</DataValueMember>
+</StructureMember>
+<DataValueMember Name="AAU" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ACAK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ACFR" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AFD" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AFDBL" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AFE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AFEBL" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CAE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CFR" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CHLIM" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="CLLIM" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="CME" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CMM" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CMO" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="CMSK" DataType="BOOL" Value="1"/>
+<DataValueMember Name="CPI" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CPTP" DataType="REAL" Radix="Float" Value="2000.0"/>
+<DataValueMember Name="CSL" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IAO" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="IAOK" DataType="BOOL" Value="1"/>
+<DataValueMember Name="ICER" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ICO" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="ID" DataType="BOOL" Value="1"/>
+<DataValueMember Name="IE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IFLT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IFS" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IHLIM" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ILLIM" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IPI" DataType="BOOL" Value="0"/>
+</Structure>
+</Data>
+</Tag>
+<Tag Name="_400_PKGV03_UDT" TagType="Base" DataType="VALVE" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[[[0,'$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00'
+		],[0,'$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00'
+		],0,0,0.00000000e+000,0.00000000e+000,0,0.00000000e+000,1,2.00000000e+003,0,0.00000000e+000,1
+		,0.00000000e+000,1]]]>
+</Data>
+<Data Format="Decorated">
+<Structure DataType="VALVE">
+<StructureMember Name="ASSET_NAME" DataType="STRING">
+<DataValueMember Name="LEN" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="DATA" DataType="STRING" Radix="ASCII">
+<![CDATA[]]>
+</DataValueMember>
+</StructureMember>
+<StructureMember Name="DESCRIPTION" DataType="STRING">
+<DataValueMember Name="LEN" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="DATA" DataType="STRING" Radix="ASCII">
+<![CDATA[]]>
+</DataValueMember>
+</StructureMember>
+<DataValueMember Name="AAU" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ACAK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ACFR" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AFD" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AFDBL" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AFE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AFEBL" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CAE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CFR" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CHLIM" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="CLLIM" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="CME" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CMM" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CMO" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="CMSK" DataType="BOOL" Value="1"/>
+<DataValueMember Name="CPI" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CPTP" DataType="REAL" Radix="Float" Value="2000.0"/>
+<DataValueMember Name="CSL" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IAO" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="IAOK" DataType="BOOL" Value="1"/>
+<DataValueMember Name="ICER" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ICO" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="ID" DataType="BOOL" Value="1"/>
+<DataValueMember Name="IE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IFLT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IFS" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IHLIM" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ILLIM" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IPI" DataType="BOOL" Value="0"/>
+</Structure>
+</Data>
+</Tag>
+<Tag Name="_400_PKGV04_UDT" TagType="Base" DataType="VALVE" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[[[0,'$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00'
+		],[0,'$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00'
+		],0,0,0.00000000e+000,0.00000000e+000,0,0.00000000e+000,1,2.00000000e+003,0,0.00000000e+000,1
+		,0.00000000e+000,1]]]>
+</Data>
+<Data Format="Decorated">
+<Structure DataType="VALVE">
+<StructureMember Name="ASSET_NAME" DataType="STRING">
+<DataValueMember Name="LEN" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="DATA" DataType="STRING" Radix="ASCII">
+<![CDATA[]]>
+</DataValueMember>
+</StructureMember>
+<StructureMember Name="DESCRIPTION" DataType="STRING">
+<DataValueMember Name="LEN" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="DATA" DataType="STRING" Radix="ASCII">
+<![CDATA[]]>
+</DataValueMember>
+</StructureMember>
+<DataValueMember Name="AAU" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ACAK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ACFR" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AFD" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AFDBL" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AFE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AFEBL" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CAE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CFR" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CHLIM" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="CLLIM" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="CME" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CMM" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CMO" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="CMSK" DataType="BOOL" Value="1"/>
+<DataValueMember Name="CPI" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CPTP" DataType="REAL" Radix="Float" Value="2000.0"/>
+<DataValueMember Name="CSL" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IAO" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="IAOK" DataType="BOOL" Value="1"/>
+<DataValueMember Name="ICER" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ICO" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="ID" DataType="BOOL" Value="1"/>
+<DataValueMember Name="IE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IFLT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IFS" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IHLIM" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ILLIM" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IPI" DataType="BOOL" Value="0"/>
+</Structure>
+</Data>
+</Tag>
+<Tag Name="_400_PKGV05_UDT" TagType="Base" DataType="VALVE" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[[[0,'$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00'
+		],[0,'$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00'
+		],0,0,0.00000000e+000,0.00000000e+000,0,0.00000000e+000,1,2.00000000e+003,0,0.00000000e+000,1
+		,0.00000000e+000,1]]]>
+</Data>
+<Data Format="Decorated">
+<Structure DataType="VALVE">
+<StructureMember Name="ASSET_NAME" DataType="STRING">
+<DataValueMember Name="LEN" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="DATA" DataType="STRING" Radix="ASCII">
+<![CDATA[]]>
+</DataValueMember>
+</StructureMember>
+<StructureMember Name="DESCRIPTION" DataType="STRING">
+<DataValueMember Name="LEN" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="DATA" DataType="STRING" Radix="ASCII">
+<![CDATA[]]>
+</DataValueMember>
+</StructureMember>
+<DataValueMember Name="AAU" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ACAK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ACFR" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AFD" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AFDBL" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AFE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AFEBL" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CAE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CFR" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CHLIM" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="CLLIM" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="CME" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CMM" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CMO" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="CMSK" DataType="BOOL" Value="1"/>
+<DataValueMember Name="CPI" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CPTP" DataType="REAL" Radix="Float" Value="2000.0"/>
+<DataValueMember Name="CSL" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IAO" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="IAOK" DataType="BOOL" Value="1"/>
+<DataValueMember Name="ICER" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ICO" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="ID" DataType="BOOL" Value="1"/>
+<DataValueMember Name="IE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IFLT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IFS" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IHLIM" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ILLIM" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IPI" DataType="BOOL" Value="0"/>
+</Structure>
+</Data>
+</Tag>
+<Tag Name="_400_PKGV06_UDT" TagType="Base" DataType="VALVE" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[[[0,'$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00'
+		],[0,'$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00'
+		],0,0,0.00000000e+000,0.00000000e+000,0,0.00000000e+000,1,2.00000000e+003,0,0.00000000e+000,1
+		,0.00000000e+000,1]]]>
+</Data>
+<Data Format="Decorated">
+<Structure DataType="VALVE">
+<StructureMember Name="ASSET_NAME" DataType="STRING">
+<DataValueMember Name="LEN" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="DATA" DataType="STRING" Radix="ASCII">
+<![CDATA[]]>
+</DataValueMember>
+</StructureMember>
+<StructureMember Name="DESCRIPTION" DataType="STRING">
+<DataValueMember Name="LEN" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="DATA" DataType="STRING" Radix="ASCII">
+<![CDATA[]]>
+</DataValueMember>
+</StructureMember>
+<DataValueMember Name="AAU" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ACAK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ACFR" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AFD" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AFDBL" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AFE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AFEBL" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CAE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CFR" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CHLIM" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="CLLIM" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="CME" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CMM" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CMO" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="CMSK" DataType="BOOL" Value="1"/>
+<DataValueMember Name="CPI" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CPTP" DataType="REAL" Radix="Float" Value="2000.0"/>
+<DataValueMember Name="CSL" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IAO" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="IAOK" DataType="BOOL" Value="1"/>
+<DataValueMember Name="ICER" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ICO" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="ID" DataType="BOOL" Value="1"/>
+<DataValueMember Name="IE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IFLT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IFS" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IHLIM" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ILLIM" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IPI" DataType="BOOL" Value="0"/>
+</Structure>
+</Data>
+</Tag>
+<Tag Name="_400_PKGV07_UDT" TagType="Base" DataType="VALVE" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[[[0,'$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00'
+		],[0,'$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00'
+		],0,0,0.00000000e+000,0.00000000e+000,1,0.00000000e+000,1,2.00000000e+003,0,0.00000000e+000,1
+		,0.00000000e+000,1]]]>
+</Data>
+<Data Format="Decorated">
+<Structure DataType="VALVE">
+<StructureMember Name="ASSET_NAME" DataType="STRING">
+<DataValueMember Name="LEN" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="DATA" DataType="STRING" Radix="ASCII">
+<![CDATA[]]>
+</DataValueMember>
+</StructureMember>
+<StructureMember Name="DESCRIPTION" DataType="STRING">
+<DataValueMember Name="LEN" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="DATA" DataType="STRING" Radix="ASCII">
+<![CDATA[]]>
+</DataValueMember>
+</StructureMember>
+<DataValueMember Name="AAU" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ACAK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ACFR" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AFD" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AFDBL" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AFE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AFEBL" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CAE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CFR" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CHLIM" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="CLLIM" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="CME" DataType="BOOL" Value="1"/>
+<DataValueMember Name="CMM" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CMO" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="CMSK" DataType="BOOL" Value="1"/>
+<DataValueMember Name="CPI" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CPTP" DataType="REAL" Radix="Float" Value="2000.0"/>
+<DataValueMember Name="CSL" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IAO" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="IAOK" DataType="BOOL" Value="1"/>
+<DataValueMember Name="ICER" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ICO" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="ID" DataType="BOOL" Value="1"/>
+<DataValueMember Name="IE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IFLT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IFS" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IHLIM" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ILLIM" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IPI" DataType="BOOL" Value="0"/>
+</Structure>
+</Data>
+</Tag>
+<Tag Name="_400_PKGV08_UDT" TagType="Base" DataType="VALVE" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[[[0,'$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00'
+		],[0,'$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00'
+		],0,0,0.00000000e+000,0.00000000e+000,0,0.00000000e+000,1,2.00000000e+003,0,0.00000000e+000,1
+		,0.00000000e+000,1]]]>
+</Data>
+<Data Format="Decorated">
+<Structure DataType="VALVE">
+<StructureMember Name="ASSET_NAME" DataType="STRING">
+<DataValueMember Name="LEN" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="DATA" DataType="STRING" Radix="ASCII">
+<![CDATA[]]>
+</DataValueMember>
+</StructureMember>
+<StructureMember Name="DESCRIPTION" DataType="STRING">
+<DataValueMember Name="LEN" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="DATA" DataType="STRING" Radix="ASCII">
+<![CDATA[]]>
+</DataValueMember>
+</StructureMember>
+<DataValueMember Name="AAU" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ACAK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ACFR" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AFD" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AFDBL" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AFE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AFEBL" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CAE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CFR" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CHLIM" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="CLLIM" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="CME" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CMM" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CMO" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="CMSK" DataType="BOOL" Value="1"/>
+<DataValueMember Name="CPI" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CPTP" DataType="REAL" Radix="Float" Value="2000.0"/>
+<DataValueMember Name="CSL" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IAO" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="IAOK" DataType="BOOL" Value="1"/>
+<DataValueMember Name="ICER" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ICO" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="ID" DataType="BOOL" Value="1"/>
+<DataValueMember Name="IE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IFLT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IFS" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IHLIM" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ILLIM" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IPI" DataType="BOOL" Value="0"/>
+</Structure>
+</Data>
+</Tag>
+<Tag Name="_400_PKGV09_UDT" TagType="Base" DataType="VALVE" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[[[0,'$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00'
+		],[0,'$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00'
+		],0,0,0.00000000e+000,0.00000000e+000,1,0.00000000e+000,1,2.00000000e+003,0,0.00000000e+000,1
+		,0.00000000e+000,1]]]>
+</Data>
+<Data Format="Decorated">
+<Structure DataType="VALVE">
+<StructureMember Name="ASSET_NAME" DataType="STRING">
+<DataValueMember Name="LEN" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="DATA" DataType="STRING" Radix="ASCII">
+<![CDATA[]]>
+</DataValueMember>
+</StructureMember>
+<StructureMember Name="DESCRIPTION" DataType="STRING">
+<DataValueMember Name="LEN" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="DATA" DataType="STRING" Radix="ASCII">
+<![CDATA[]]>
+</DataValueMember>
+</StructureMember>
+<DataValueMember Name="AAU" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ACAK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ACFR" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AFD" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AFDBL" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AFE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AFEBL" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CAE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CFR" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CHLIM" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="CLLIM" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="CME" DataType="BOOL" Value="1"/>
+<DataValueMember Name="CMM" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CMO" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="CMSK" DataType="BOOL" Value="1"/>
+<DataValueMember Name="CPI" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CPTP" DataType="REAL" Radix="Float" Value="2000.0"/>
+<DataValueMember Name="CSL" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IAO" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="IAOK" DataType="BOOL" Value="1"/>
+<DataValueMember Name="ICER" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ICO" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="ID" DataType="BOOL" Value="1"/>
+<DataValueMember Name="IE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IFLT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IFS" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IHLIM" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ILLIM" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IPI" DataType="BOOL" Value="0"/>
+</Structure>
+</Data>
+</Tag>
+<Tag Name="_400_PKGV10_UDT" TagType="Base" DataType="VALVE" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[[[0,'$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00'
+		],[0,'$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00'
+		],0,0,0.00000000e+000,0.00000000e+000,1,0.00000000e+000,1,2.00000000e+003,0,0.00000000e+000,1
+		,0.00000000e+000,1]]]>
+</Data>
+<Data Format="Decorated">
+<Structure DataType="VALVE">
+<StructureMember Name="ASSET_NAME" DataType="STRING">
+<DataValueMember Name="LEN" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="DATA" DataType="STRING" Radix="ASCII">
+<![CDATA[]]>
+</DataValueMember>
+</StructureMember>
+<StructureMember Name="DESCRIPTION" DataType="STRING">
+<DataValueMember Name="LEN" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="DATA" DataType="STRING" Radix="ASCII">
+<![CDATA[]]>
+</DataValueMember>
+</StructureMember>
+<DataValueMember Name="AAU" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ACAK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ACFR" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AFD" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AFDBL" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AFE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AFEBL" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CAE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CFR" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CHLIM" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="CLLIM" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="CME" DataType="BOOL" Value="1"/>
+<DataValueMember Name="CMM" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CMO" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="CMSK" DataType="BOOL" Value="1"/>
+<DataValueMember Name="CPI" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CPTP" DataType="REAL" Radix="Float" Value="2000.0"/>
+<DataValueMember Name="CSL" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IAO" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="IAOK" DataType="BOOL" Value="1"/>
+<DataValueMember Name="ICER" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ICO" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="ID" DataType="BOOL" Value="1"/>
+<DataValueMember Name="IE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IFLT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IFS" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IHLIM" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ILLIM" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IPI" DataType="BOOL" Value="0"/>
+</Structure>
+</Data>
+</Tag>
+<Tag Name="_400_PKGV11_UDT" TagType="Base" DataType="VALVE" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[[[0,'$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00'
+		],[0,'$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00'
+		],0,0,0.00000000e+000,0.00000000e+000,0,0.00000000e+000,1,2.00000000e+003,0,0.00000000e+000,1
+		,0.00000000e+000,1]]]>
+</Data>
+<Data Format="Decorated">
+<Structure DataType="VALVE">
+<StructureMember Name="ASSET_NAME" DataType="STRING">
+<DataValueMember Name="LEN" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="DATA" DataType="STRING" Radix="ASCII">
+<![CDATA[]]>
+</DataValueMember>
+</StructureMember>
+<StructureMember Name="DESCRIPTION" DataType="STRING">
+<DataValueMember Name="LEN" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="DATA" DataType="STRING" Radix="ASCII">
+<![CDATA[]]>
+</DataValueMember>
+</StructureMember>
+<DataValueMember Name="AAU" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ACAK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ACFR" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AFD" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AFDBL" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AFE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AFEBL" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CAE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CFR" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CHLIM" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="CLLIM" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="CME" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CMM" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CMO" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="CMSK" DataType="BOOL" Value="1"/>
+<DataValueMember Name="CPI" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CPTP" DataType="REAL" Radix="Float" Value="2000.0"/>
+<DataValueMember Name="CSL" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IAO" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="IAOK" DataType="BOOL" Value="1"/>
+<DataValueMember Name="ICER" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ICO" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="ID" DataType="BOOL" Value="1"/>
+<DataValueMember Name="IE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IFLT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IFS" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IHLIM" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ILLIM" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IPI" DataType="BOOL" Value="0"/>
+</Structure>
+</Data>
+</Tag>
+<Tag Name="_400_PKGV12_UDT" TagType="Base" DataType="VALVE" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[[[0,'$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00'
+		],[0,'$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00'
+		],0,0,0.00000000e+000,0.00000000e+000,0,0.00000000e+000,1,2.00000000e+003,0,0.00000000e+000,1
+		,0.00000000e+000,1]]]>
+</Data>
+<Data Format="Decorated">
+<Structure DataType="VALVE">
+<StructureMember Name="ASSET_NAME" DataType="STRING">
+<DataValueMember Name="LEN" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="DATA" DataType="STRING" Radix="ASCII">
+<![CDATA[]]>
+</DataValueMember>
+</StructureMember>
+<StructureMember Name="DESCRIPTION" DataType="STRING">
+<DataValueMember Name="LEN" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="DATA" DataType="STRING" Radix="ASCII">
+<![CDATA[]]>
+</DataValueMember>
+</StructureMember>
+<DataValueMember Name="AAU" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ACAK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ACFR" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AFD" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AFDBL" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AFE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AFEBL" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CAE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CFR" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CHLIM" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="CLLIM" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="CME" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CMM" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CMO" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="CMSK" DataType="BOOL" Value="1"/>
+<DataValueMember Name="CPI" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CPTP" DataType="REAL" Radix="Float" Value="2000.0"/>
+<DataValueMember Name="CSL" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IAO" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="IAOK" DataType="BOOL" Value="1"/>
+<DataValueMember Name="ICER" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ICO" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="ID" DataType="BOOL" Value="1"/>
+<DataValueMember Name="IE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IFLT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IFS" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IHLIM" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ILLIM" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IPI" DataType="BOOL" Value="0"/>
+</Structure>
+</Data>
+</Tag>
+<Tag Name="_400_PKGV13_UDT" TagType="Base" DataType="VALVE" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[[[0,'$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00'
+		],[0,'$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00'
+		],0,0,0.00000000e+000,0.00000000e+000,1,0.00000000e+000,1,2.00000000e+003,0,0.00000000e+000,1
+		,0.00000000e+000,1]]]>
+</Data>
+<Data Format="Decorated">
+<Structure DataType="VALVE">
+<StructureMember Name="ASSET_NAME" DataType="STRING">
+<DataValueMember Name="LEN" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="DATA" DataType="STRING" Radix="ASCII">
+<![CDATA[]]>
+</DataValueMember>
+</StructureMember>
+<StructureMember Name="DESCRIPTION" DataType="STRING">
+<DataValueMember Name="LEN" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="DATA" DataType="STRING" Radix="ASCII">
+<![CDATA[]]>
+</DataValueMember>
+</StructureMember>
+<DataValueMember Name="AAU" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ACAK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ACFR" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AFD" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AFDBL" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AFE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AFEBL" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CAE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CFR" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CHLIM" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="CLLIM" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="CME" DataType="BOOL" Value="1"/>
+<DataValueMember Name="CMM" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CMO" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="CMSK" DataType="BOOL" Value="1"/>
+<DataValueMember Name="CPI" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CPTP" DataType="REAL" Radix="Float" Value="2000.0"/>
+<DataValueMember Name="CSL" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IAO" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="IAOK" DataType="BOOL" Value="1"/>
+<DataValueMember Name="ICER" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ICO" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="ID" DataType="BOOL" Value="1"/>
+<DataValueMember Name="IE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IFLT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IFS" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IHLIM" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ILLIM" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IPI" DataType="BOOL" Value="0"/>
+</Structure>
+</Data>
+</Tag>
+<Tag Name="_400_PKGV14_UDT" TagType="Base" DataType="VALVE" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[[[0,'$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00'
+		],[0,'$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00'
+		],-128,0,0.00000000e+000,0.00000000e+000,0,0.00000000e+000,1,2.00000000e+003,0,0.00000000e+000
+		,3,0.00000000e+000,2]]]>
+</Data>
+<Data Format="Decorated">
+<Structure DataType="VALVE">
+<StructureMember Name="ASSET_NAME" DataType="STRING">
+<DataValueMember Name="LEN" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="DATA" DataType="STRING" Radix="ASCII">
+<![CDATA[]]>
+</DataValueMember>
+</StructureMember>
+<StructureMember Name="DESCRIPTION" DataType="STRING">
+<DataValueMember Name="LEN" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="DATA" DataType="STRING" Radix="ASCII">
+<![CDATA[]]>
+</DataValueMember>
+</StructureMember>
+<DataValueMember Name="AAU" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ACAK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ACFR" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AFD" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AFDBL" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AFE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AFEBL" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CAE" DataType="BOOL" Value="1"/>
+<DataValueMember Name="CFR" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CHLIM" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="CLLIM" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="CME" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CMM" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CMO" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="CMSK" DataType="BOOL" Value="1"/>
+<DataValueMember Name="CPI" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CPTP" DataType="REAL" Radix="Float" Value="2000.0"/>
+<DataValueMember Name="CSL" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IAO" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="IAOK" DataType="BOOL" Value="1"/>
+<DataValueMember Name="ICER" DataType="BOOL" Value="1"/>
+<DataValueMember Name="ICO" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="ID" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IE" DataType="BOOL" Value="1"/>
+<DataValueMember Name="IFLT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IFS" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IHLIM" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ILLIM" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IPI" DataType="BOOL" Value="0"/>
+</Structure>
+</Data>
+</Tag>
+<Tag Name="_400_Pump_LowFlow" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="_400_Pump_NoFlow" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="_400_RLP01_FWD_CMD" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="_400_RLP_REV_CMD" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="_510_LT_01_ALM" TagType="Base" DataType="ALARM_ANALOG" ExternalAccess="Read/Write">
+<Data Format="Alarm">
+<AlarmAnalogParameters EnableIn="true" InFault="false" HHEnabled="false" HEnabled="true" LEnabled="true" LLEnabled="true" AckRequired="true" ProgAckAll="false" OperAckAll="false" HHProgAck="false" HHOperAck="false"
+ HProgAck="false" HOperAck="false" LProgAck="false" LOperAck="false" LLProgAck="false" LLOperAck="false" ROCPosProgAck="false" ROCPosOperAck="false" ROCNegProgAck="false" ROCNegOperAck="false" ProgSuppress="false"
+ OperSuppress="false" ProgUnsuppress="false" OperUnsuppress="false" HHOperShelve="false" HOperShelve="false" LOperShelve="false" LLOperShelve="false" ROCPosOperShelve="false" ROCNegOperShelve="false" ProgUnshelveAll="false" HHOperUnshelve="false"
+ HOperUnshelve="false" LOperUnshelve="false" LLOperUnshelve="false" ROCPosOperUnshelve="false" ROCNegOperUnshelve="false" ProgDisable="false" OperDisable="false" ProgEnable="true" OperEnable="false" AlarmCountReset="false" HHMinDurationEnable="true"
+ HMinDurationEnable="true" LMinDurationEnable="true" LLMinDurationEnable="true" In="90.933876" HHLimit="88.0" HHSeverity="500" HLimit="85.0" HSeverity="500" LLimit="10.0" LSeverity="500" LLLimit="10.0"
+ LLSeverity="500" MinDurationPRE="30000" ShelveDuration="0" MaxShelveDuration="0" Deadband="0.0" ROCPosLimit="0.0" ROCPosSeverity="500" ROCNegLimit="0.0" ROCNegSeverity="500" ROCPeriod="0.0"/>
+<AlarmConfig>
+<Messages>
+<Message Type="H">
+<Text Lang="en-US">
+<![CDATA[Warning - High Gas Level]]>
+</Text>
+</Message>
+<Message Type="L">
+<Text Lang="en-US">
+<![CDATA[Warning - Low Gas Level]]>
+</Text>
+</Message>
+<Message Type="LL">
+<Text Lang="en-US">
+<![CDATA[Zero Gas Available]]>
+</Text>
+</Message>
+</Messages>
+</AlarmConfig>
+</Data>
+</Tag>
+<Tag Name="_510_LT_02_ALM" TagType="Base" DataType="ALARM_ANALOG" ExternalAccess="Read/Write">
+<Data Format="Alarm">
+<AlarmAnalogParameters EnableIn="true" InFault="false" HHEnabled="true" HEnabled="true" LEnabled="true" LLEnabled="false" AckRequired="true" ProgAckAll="false" OperAckAll="false" HHProgAck="false" HHOperAck="false"
+ HProgAck="false" HOperAck="false" LProgAck="false" LOperAck="false" LLProgAck="false" LLOperAck="false" ROCPosProgAck="false" ROCPosOperAck="false" ROCNegProgAck="false" ROCNegOperAck="false" ProgSuppress="false"
+ OperSuppress="false" ProgUnsuppress="false" OperUnsuppress="false" HHOperShelve="false" HOperShelve="false" LOperShelve="false" LLOperShelve="false" ROCPosOperShelve="false" ROCNegOperShelve="false" ProgUnshelveAll="false" HHOperUnshelve="false"
+ HOperUnshelve="false" LOperUnshelve="false" LLOperUnshelve="false" ROCPosOperUnshelve="false" ROCNegOperUnshelve="false" ProgDisable="false" OperDisable="false" ProgEnable="true" OperEnable="false" AlarmCountReset="false" HHMinDurationEnable="true"
+ HMinDurationEnable="true" LMinDurationEnable="true" LLMinDurationEnable="true" In="20.037724" HHLimit="22.6" HHSeverity="500" HLimit="22.5" HSeverity="500" LLimit="14.5" LSeverity="500" LLLimit="14.2"
+ LLSeverity="500" MinDurationPRE="30000" ShelveDuration="0" MaxShelveDuration="0" Deadband="0.0" ROCPosLimit="0.04" ROCPosSeverity="635" ROCNegLimit="0.04" ROCNegSeverity="775" ROCPeriod="5.0"/>
+<AlarmConfig>
+<Messages>
+<Message Type="HH">
+<Text Lang="en-US">
+<![CDATA[Digester Tank Overflow]]>
+</Text>
+</Message>
+<Message Type="H">
+<Text Lang="en-US">
+<![CDATA[Digester High Level]]>
+</Text>
+</Message>
+<Message Type="L">
+<Text Lang="en-US">
+<![CDATA[Digester Tank Low Level]]>
+</Text>
+</Message>
+<Message Type="POS">
+<Text Lang="en-US">
+<![CDATA[Emergency - Rapid Digester Level Increase]]>
+</Text>
+</Message>
+<Message Type="NEG">
+<Text Lang="en-US">
+<![CDATA[Emergency - Rapid Digester Level Loss]]>
+</Text>
+</Message>
+</Messages>
+</AlarmConfig>
+</Data>
+</Tag>
+<Tag Name="DATE_TIME" TagType="Base" DataType="DINT" Dimensions="7" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[[2026,3,13,15,14,43,982325]]]>
+</Data>
+<Data Format="Decorated">
+<Array DataType="DINT" Dimensions="7" Radix="Decimal">
+<Element Index="[0]" Value="2026"/>
+<Element Index="[1]" Value="3"/>
+<Element Index="[2]" Value="13"/>
+<Element Index="[3]" Value="15"/>
+<Element Index="[4]" Value="14"/>
+<Element Index="[5]" Value="43"/>
+<Element Index="[6]" Value="982325"/>
+</Array>
+</Data>
+</Tag>
+<Tag Name="Digester_Pumping_Sequence" TagType="Base" DataType="DINT" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[130]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="130"/>
+</Data>
+</Tag>
+<Tag Name="Dosing_Sequence" TagType="Base" DataType="DINT" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="FromTankActive" TagType="Base" DataType="DINT" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="HMI_Auto_Mode" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[1]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="1"/>
+</Data>
+</Tag>
+<Tag Name="Manual_Transfer_Active" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="Manual_Transfer_Done" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="ManualTransferONS" TagType="Base" DataType="DINT" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="ManualTransferTMRS" TagType="Base" DataType="TIMER" Dimensions="20" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[[[0,0,0],[183615,10000,0],[189000,10000,0],[3617277,7000,0],[3453456,30000,0],[1656396,7000,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[3401219
+		,100,0],[0,0,0],[0,10000,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[3470134,10000,0]]]]>
+</Data>
+<Data Format="Decorated">
+<Array DataType="TIMER" Dimensions="20">
+<Element Index="[0]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[1]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="10000"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[2]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="10000"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[3]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="7000"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[4]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="30000"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[5]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="7000"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[6]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[7]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[8]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[9]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[10]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="100"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[11]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[12]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="10000"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[13]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[14]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[15]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[16]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[17]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[18]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[19]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="10000"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+</Array>
+</Data>
+</Tag>
+<Tag Name="ManualTransferTotal" TagType="Base" DataType="REAL" Radix="Float" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[0.00000000e+000]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="0.0"/>
+</Data>
+</Tag>
+<Tag Name="ONS" TagType="Base" DataType="DINT" Dimensions="5" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[[67117151,8128,2,2,-2130771968]]]>
+</Data>
+<Data Format="Decorated">
+<Array DataType="DINT" Dimensions="5" Radix="Decimal">
+<Element Index="[0]" Value="67117151"/>
+<Element Index="[1]" Value="8128"/>
+<Element Index="[2]" Value="2"/>
+<Element Index="[3]" Value="2"/>
+<Element Index="[4]" Value="-2130771968"/>
+</Array>
+</Data>
+</Tag>
+<Tag Name="Operator_Transfer_Permissive" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="OperatorTransferLoadTmr" TagType="Base" DataType="TIMER" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[[0,45000,0]]]>
+</Data>
+<Data Format="Decorated">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="45000"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Data>
+</Tag>
+<Tag Name="OpLoad1" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="OpLoad2" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="OpLoad3" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="OpLoad4" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="Queue_Sorted" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="Remember_ManualTransferTotal" TagType="Base" DataType="REAL" Radix="Float" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[5.29000000e+002]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="529.0"/>
+</Data>
+</Tag>
+<Tag Name="RemoveFromQueue1PB" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="RemoveFromQueue2PB" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="RemoveFromQueue3PB" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="RemoveFromQueue4PB" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="RemoveFromQueue5PB" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="RemoveFromQueue6PB" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="RemoveFromQueue7PB" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="RemoveFromQueue8PB" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="RemoveFromQueue9PB" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="RemoveFromQueuePB" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="SaveToQueuePB" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="Sort_Transfer_Queue" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="ToTankActive" TagType="Base" DataType="DINT" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="TransferEntry" TagType="Base" DataType="TransferDetails" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[[4,5,5.21000000e+002,0,0]]]>
+</Data>
+<Data Format="Decorated">
+<Structure DataType="TransferDetails">
+<DataValueMember Name="FromTank" DataType="DINT" Radix="Decimal" Value="4"/>
+<DataValueMember Name="ToTank" DataType="DINT" Radix="Decimal" Value="5"/>
+<DataValueMember Name="Quantity" DataType="REAL" Radix="Float" Value="521.0"/>
+<DataValueMember Name="Hour" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Minute" DataType="DINT" Radix="Decimal" Value="0"/>
+</Structure>
+</Data>
+</Tag>
+<Tag Name="TransferQueue" TagType="Base" DataType="TransferDetails" Dimensions="20" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[[[0,0,0.00000000e+000,0,0],[0,0,0.00000000e+000,0,0],[0,0,0.00000000e+000,0,0],[0,0,0.00000000e+000,0,0],[0,0,0.00000000e+000
+		,0,0],[0,0,0.00000000e+000,0,0],[0,0,0.00000000e+000,0,0],[0,0,0.00000000e+000,0,0],[0,0,0.00000000e+000,0,0],[0,0,0.00000000e+000
+		,0,0],[0,0,0.00000000e+000,0,0],[0,0,0.00000000e+000,0,0],[0,0,0.00000000e+000,0,0],[0,0,0.00000000e+000,0,0],[0,0,0.00000000e+000
+		,0,0],[0,0,0.00000000e+000,0,0],[0,0,0.00000000e+000,0,0],[0,0,0.00000000e+000,0,0],[0,0,0.00000000e+000,0,0],[0,0,0.00000000e+000
+		,0,0]]]]>
+</Data>
+<Data Format="Decorated">
+<Array DataType="TransferDetails" Dimensions="20">
+<Element Index="[0]">
+<Structure DataType="TransferDetails">
+<DataValueMember Name="FromTank" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ToTank" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Quantity" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="Hour" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Minute" DataType="DINT" Radix="Decimal" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[1]">
+<Structure DataType="TransferDetails">
+<DataValueMember Name="FromTank" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ToTank" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Quantity" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="Hour" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Minute" DataType="DINT" Radix="Decimal" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[2]">
+<Structure DataType="TransferDetails">
+<DataValueMember Name="FromTank" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ToTank" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Quantity" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="Hour" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Minute" DataType="DINT" Radix="Decimal" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[3]">
+<Structure DataType="TransferDetails">
+<DataValueMember Name="FromTank" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ToTank" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Quantity" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="Hour" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Minute" DataType="DINT" Radix="Decimal" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[4]">
+<Structure DataType="TransferDetails">
+<DataValueMember Name="FromTank" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ToTank" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Quantity" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="Hour" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Minute" DataType="DINT" Radix="Decimal" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[5]">
+<Structure DataType="TransferDetails">
+<DataValueMember Name="FromTank" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ToTank" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Quantity" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="Hour" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Minute" DataType="DINT" Radix="Decimal" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[6]">
+<Structure DataType="TransferDetails">
+<DataValueMember Name="FromTank" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ToTank" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Quantity" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="Hour" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Minute" DataType="DINT" Radix="Decimal" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[7]">
+<Structure DataType="TransferDetails">
+<DataValueMember Name="FromTank" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ToTank" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Quantity" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="Hour" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Minute" DataType="DINT" Radix="Decimal" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[8]">
+<Structure DataType="TransferDetails">
+<DataValueMember Name="FromTank" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ToTank" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Quantity" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="Hour" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Minute" DataType="DINT" Radix="Decimal" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[9]">
+<Structure DataType="TransferDetails">
+<DataValueMember Name="FromTank" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ToTank" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Quantity" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="Hour" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Minute" DataType="DINT" Radix="Decimal" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[10]">
+<Structure DataType="TransferDetails">
+<DataValueMember Name="FromTank" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ToTank" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Quantity" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="Hour" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Minute" DataType="DINT" Radix="Decimal" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[11]">
+<Structure DataType="TransferDetails">
+<DataValueMember Name="FromTank" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ToTank" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Quantity" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="Hour" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Minute" DataType="DINT" Radix="Decimal" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[12]">
+<Structure DataType="TransferDetails">
+<DataValueMember Name="FromTank" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ToTank" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Quantity" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="Hour" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Minute" DataType="DINT" Radix="Decimal" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[13]">
+<Structure DataType="TransferDetails">
+<DataValueMember Name="FromTank" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ToTank" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Quantity" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="Hour" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Minute" DataType="DINT" Radix="Decimal" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[14]">
+<Structure DataType="TransferDetails">
+<DataValueMember Name="FromTank" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ToTank" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Quantity" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="Hour" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Minute" DataType="DINT" Radix="Decimal" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[15]">
+<Structure DataType="TransferDetails">
+<DataValueMember Name="FromTank" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ToTank" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Quantity" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="Hour" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Minute" DataType="DINT" Radix="Decimal" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[16]">
+<Structure DataType="TransferDetails">
+<DataValueMember Name="FromTank" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ToTank" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Quantity" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="Hour" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Minute" DataType="DINT" Radix="Decimal" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[17]">
+<Structure DataType="TransferDetails">
+<DataValueMember Name="FromTank" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ToTank" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Quantity" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="Hour" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Minute" DataType="DINT" Radix="Decimal" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[18]">
+<Structure DataType="TransferDetails">
+<DataValueMember Name="FromTank" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ToTank" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Quantity" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="Hour" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Minute" DataType="DINT" Radix="Decimal" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[19]">
+<Structure DataType="TransferDetails">
+<DataValueMember Name="FromTank" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ToTank" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Quantity" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="Hour" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Minute" DataType="DINT" Radix="Decimal" Value="0"/>
+</Structure>
+</Element>
+</Array>
+</Data>
+</Tag>
+<Tag Name="TransferQueueFIFO" TagType="Base" DataType="CONTROL" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[[268435456,10,0]]]>
+</Data>
+<Data Format="Decorated">
+<Structure DataType="CONTROL">
+<DataValueMember Name="LEN" DataType="DINT" Radix="Decimal" Value="10"/>
+<DataValueMember Name="POS" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="EU" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="EM" DataType="BOOL" Value="1"/>
+<DataValueMember Name="ER" DataType="BOOL" Value="0"/>
+<DataValueMember Name="UL" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="FD" DataType="BOOL" Value="0"/>
+</Structure>
+</Data>
+</Tag>
+<Tag Name="TransferQueueUnload" TagType="Base" DataType="TransferDetails" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[[4,5,5.21000000e+002,0,0]]]>
+</Data>
+<Data Format="Decorated">
+<Structure DataType="TransferDetails">
+<DataValueMember Name="FromTank" DataType="DINT" Radix="Decimal" Value="4"/>
+<DataValueMember Name="ToTank" DataType="DINT" Radix="Decimal" Value="5"/>
+<DataValueMember Name="Quantity" DataType="REAL" Radix="Float" Value="521.0"/>
+<DataValueMember Name="Hour" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="Minute" DataType="DINT" Radix="Decimal" Value="0"/>
+</Structure>
+</Data>
+</Tag>
+<Tag Name="TruckUnloadInterlock" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+</Tags>
+<Programs Use="Context">
+<Program Use="Context" Name="MainProgram">
+<Routines Use="Context">
+<Routine Use="Target" Name="OperatorTransfers" Type="RLL">
+<RLLContent>
+<Rung Number="0" Type="N">
+<Text>
+<![CDATA[[XIC(SaveToQueuePB) ,XIC(OpLoad1) ,XIC(OpLoad2) ,XIC(OpLoad3) ,XIC(OpLoad4) ]GRT(TransferEntry.FromTank,0)GRT(TransferEntry.ToTank,0)GRT(TransferEntry.Quantity,0)ONS(ManualTransferONS.0)[NEQ(TransferQueueFIFO.POS,0) OTL(Sort_Transfer_Queue) ,EQU(TransferQueueFIFO.POS,0) FFL(TransferEntry,TransferQueue[0],TransferQueueFIFO,?,?) ];]]>
+</Text>
+</Rung>
+<Rung Number="1" Type="N">
+<Text>
+<![CDATA[XIC(Sort_Transfer_Queue)[[GRT(TransferQueue[0].Quantity,0) [LES(TransferEntry.Hour,TransferQueue[0].Hour) ,EQU(TransferEntry.Hour,TransferQueue[0].Hour) LEQ(TransferEntry.Minute,TransferQueue[0].Minute) ] ,EQU(TransferQueue[0].Quantity,0) ] COP(TransferQueue[8],TransferQueue[9],1) COP(TransferQueue[7],TransferQueue[8],1) COP(TransferQueue[6],TransferQueue[7],1) COP(TransferQueue[5],TransferQueue[6],1) COP(TransferQueue[4],TransferQueue[5],1) COP(TransferQueue[3],TransferQueue[4],1) COP(TransferQueue[2],TransferQueue[3],1) COP(TransferQueue[1],TransferQueue[2],1) COP(TransferQueue[0],TransferQueue[1],1) COP(TransferEntry,TransferQueue[0],1) ADD(TransferQueueFIFO.POS,1,TransferQueueFIFO.POS) OTL(Queue_Sorted) ,XIO(Queue_Sorted) [GRT(TransferQueue[1].Quantity,0) [LES(TransferEntry.Hour,TransferQueue[1].Hour) ,EQU(TransferEntry.Hour,TransferQueue[1].Hour) LEQ(TransferEntry.Minute,TransferQueue[1].Minute) ] ,EQU(TransferQueue[1].Quantity,0) ] COP(TransferQueue[8],TransferQueue[9],1) COP(TransferQueue[7],TransferQueue[8],1) COP(TransferQueue[6],TransferQueue[7],1) COP(TransferQueue[5],TransferQueue[6],1) COP(TransferQueue[4],TransferQueue[5],1) COP(TransferQueue[3],TransferQueue[4],1) COP(TransferQueue[2],TransferQueue[3],1) COP(TransferQueue[1],TransferQueue[2],1) COP(TransferEntry,TransferQueue[1],1) ADD(TransferQueueFIFO.POS,1,TransferQueueFIFO.POS) OTL(Queue_Sorted) ,XIO(Queue_Sorted) [GRT(TransferQueue[2].Quantity,0) [LES(TransferEntry.Hour,TransferQueue[2].Hour) ,EQU(TransferEntry.Hour,TransferQueue[2].Hour) LEQ(TransferEntry.Minute,TransferQueue[2].Minute) ] ,EQU(TransferQueue[2].Quantity,0) ] COP(TransferQueue[8],TransferQueue[9],1) COP(TransferQueue[7],TransferQueue[8],1) COP(TransferQueue[6],TransferQueue[7],1) COP(TransferQueue[5],TransferQueue[6],1) COP(TransferQueue[4],TransferQueue[5],1) COP(TransferQueue[3],TransferQueue[4],1) COP(TransferQueue[2],TransferQueue[3],1) COP(TransferEntry,TransferQueue[2],1) ADD(TransferQueueFIFO.POS,1,TransferQueueFIFO.POS) OTL(Queue_Sorted) ,XIO(Queue_Sorted) [GRT(TransferQueue[3].Quantity,0) [LES(TransferEntry.Hour,TransferQueue[3].Hour) ,EQU(TransferEntry.Hour,TransferQueue[3].Hour) LEQ(TransferEntry.Minute,TransferQueue[3].Minute) ] ,EQU(TransferQueue[3].Quantity,0) ] COP(TransferQueue[8],TransferQueue[9],1) COP(TransferQueue[7],TransferQueue[8],1) COP(TransferQueue[6],TransferQueue[7],1) COP(TransferQueue[5],TransferQueue[6],1) COP(TransferQueue[4],TransferQueue[5],1) COP(TransferQueue[3],TransferQueue[4],1) COP(TransferEntry,TransferQueue[3],1) ADD(TransferQueueFIFO.POS,1,TransferQueueFIFO.POS) OTL(Queue_Sorted) ,XIO(Queue_Sorted) [GRT(TransferQueue[4].Quantity,0) [LES(TransferEntry.Hour,TransferQueue[4].Hour) ,EQU(TransferEntry.Hour,TransferQueue[4].Hour) LEQ(TransferEntry.Minute,TransferQueue[4].Minute) ] ,EQU(TransferQueue[4].Quantity,0) ] COP(TransferQueue[8],TransferQueue[9],1) COP(TransferQueue[7],TransferQueue[8],1) COP(TransferQueue[6],TransferQueue[7],1) COP(TransferQueue[5],TransferQueue[6],1) COP(TransferQueue[4],TransferQueue[5],1) COP(TransferEntry,TransferQueue[4],1) ADD(TransferQueueFIFO.POS,1,TransferQueueFIFO.POS) OTL(Queue_Sorted) ,XIO(Queue_Sorted) [GRT(TransferQueue[5].Quantity,0) [LES(TransferEntry.Hour,TransferQueue[5].Hour) ,EQU(TransferEntry.Hour,TransferQueue[5].Hour) LEQ(TransferEntry.Minute,TransferQueue[5].Minute) ] ,EQU(TransferQueue[5].Quantity,0) ] COP(TransferQueue[8],TransferQueue[9],1) COP(TransferQueue[7],TransferQueue[8],1) COP(TransferQueue[6],TransferQueue[7],1) COP(TransferQueue[5],TransferQueue[6],1) COP(TransferEntry,TransferQueue[5],1) ADD(TransferQueueFIFO.POS,1,TransferQueueFIFO.POS) OTL(Queue_Sorted) ,XIO(Queue_Sorted) [GRT(TransferQueue[6].Quantity,0) [LES(TransferEntry.Hour,TransferQueue[6].Hour) ,EQU(TransferEntry.Hour,TransferQueue[6].Hour) LEQ(TransferEntry.Minute,TransferQueue[6].Minute) ] ,EQU(TransferQueue[6].Quantity,0) ] COP(TransferQueue[8],TransferQueue[9],1) COP(TransferQueue[7],TransferQueue[8],1) COP(TransferQueue[6],TransferQueue[7],1) COP(TransferEntry,TransferQueue[6],1) ADD(TransferQueueFIFO.POS,1,TransferQueueFIFO.POS) OTL(Queue_Sorted) ,XIO(Queue_Sorted) [GRT(TransferQueue[7].Quantity,0) [LES(TransferEntry.Hour,TransferQueue[7].Hour) ,EQU(TransferEntry.Hour,TransferQueue[7].Hour) LEQ(TransferEntry.Minute,TransferQueue[7].Minute) ] ,EQU(TransferQueue[7].Quantity,0) ] COP(TransferQueue[8],TransferQueue[9],1) COP(TransferQueue[7],TransferQueue[8],1) COP(TransferEntry,TransferQueue[7],1) ADD(TransferQueueFIFO.POS,1,TransferQueueFIFO.POS) OTL(Queue_Sorted) ,XIO(Queue_Sorted) [GRT(TransferQueue[8].Quantity,0) [LES(TransferEntry.Hour,TransferQueue[8].Hour) ,EQU(TransferEntry.Hour,TransferQueue[8].Hour) LEQ(TransferEntry.Minute,TransferQueue[8].Minute) ] ,EQU(TransferQueue[8].Quantity,0) ] COP(TransferQueue[8],TransferQueue[9],1) COP(TransferEntry,TransferQueue[8],1) ADD(TransferQueueFIFO.POS,1,TransferQueueFIFO.POS) OTL(Queue_Sorted) ,XIO(Queue_Sorted) [GRT(TransferQueue[9].Quantity,0) [LES(TransferEntry.Hour,TransferQueue[9].Hour) ,EQU(TransferEntry.Hour,TransferQueue[9].Hour) LEQ(TransferEntry.Minute,TransferQueue[9].Minute) ] ,EQU(TransferQueue[9].Quantity,0) ] COP(TransferEntry,TransferQueue[9],1) ADD(TransferQueueFIFO.POS,1,TransferQueueFIFO.POS) OTL(Queue_Sorted) ,OTU(Queue_Sorted) OTU(Sort_Transfer_Queue) ];]]>
+</Text>
+</Rung>
+<Rung Number="2" Type="N">
+<Text>
+<![CDATA[[XIC(RemoveFromQueuePB) ONS(ManualTransferONS.1) FFU(TransferQueue[0],TransferQueueUnload,TransferQueueFIFO,?,?) MOV(0,ManualTransferTotal) ,XIC(RemoveFromQueue1PB) ONS(ManualTransferONS.2) COP(TransferQueue[2],TransferQueue[1],1) COP(TransferQueue[3],TransferQueue[2],1) COP(TransferQueue[4],TransferQueue[3],1) COP(TransferQueue[5],TransferQueue[4],1) COP(TransferQueue[6],TransferQueue[5],1) COP(TransferQueue[7],TransferQueue[6],1) COP(TransferQueue[8],TransferQueue[7],1) COP(TransferQueue[9],TransferQueue[8],1) FLL(0,TransferQueue[9],1) ,XIC(RemoveFromQueue2PB) ONS(ManualTransferONS.3) COP(TransferQueue[3],TransferQueue[2],1) COP(TransferQueue[4],TransferQueue[3],1) COP(TransferQueue[5],TransferQueue[4],1) COP(TransferQueue[6],TransferQueue[5],1) COP(TransferQueue[7],TransferQueue[6],1) COP(TransferQueue[8],TransferQueue[7],1) COP(TransferQueue[9],TransferQueue[8],1) FLL(0,TransferQueue[9],1) ,XIC(RemoveFromQueue3PB) ONS(ManualTransferONS.4) COP(TransferQueue[4],TransferQueue[3],1) COP(TransferQueue[5],TransferQueue[4],1) COP(TransferQueue[6],TransferQueue[5],1) COP(TransferQueue[7],TransferQueue[6],1) COP(TransferQueue[8],TransferQueue[7],1) COP(TransferQueue[9],TransferQueue[8],1) FLL(0,TransferQueue[9],1) ,XIC(RemoveFromQueue4PB) ONS(ManualTransferONS.5) COP(TransferQueue[5],TransferQueue[4],1) COP(TransferQueue[6],TransferQueue[5],1) COP(TransferQueue[7],TransferQueue[6],1) COP(TransferQueue[8],TransferQueue[7],1) COP(TransferQueue[9],TransferQueue[8],1) FLL(0,TransferQueue[9],1) ,XIC(RemoveFromQueue5PB) ONS(ManualTransferONS.6) COP(TransferQueue[6],TransferQueue[5],1) COP(TransferQueue[7],TransferQueue[6],1) COP(TransferQueue[8],TransferQueue[7],1) COP(TransferQueue[9],TransferQueue[8],1) FLL(0,TransferQueue[9],1) ,XIC(RemoveFromQueue6PB) ONS(ManualTransferONS.7) COP(TransferQueue[7],TransferQueue[6],1) COP(TransferQueue[8],TransferQueue[7],1) COP(TransferQueue[9],TransferQueue[8],1) FLL(0,TransferQueue[9],1) ,XIC(RemoveFromQueue7PB) ONS(ManualTransferONS.8) COP(TransferQueue[8],TransferQueue[7],1) COP(TransferQueue[9],TransferQueue[8],1) FLL(0,TransferQueue[9],1) ,XIC(RemoveFromQueue8PB) ONS(ManualTransferONS.9) COP(TransferQueue[9],TransferQueue[8],1) FLL(0,TransferQueue[9],1) ,XIC(RemoveFromQueue9PB) ONS(ManualTransferONS.10) FLL(0,TransferQueue[9],1) ];]]>
+</Text>
+</Rung>
+<Rung Number="3" Type="N">
+<Text>
+<![CDATA[EQU(TransferQueue[0].Quantity,0)MOV(0,TransferQueueFIFO.POS);]]>
+</Text>
+</Rung>
+<Rung Number="4" Type="N">
+<Text>
+<![CDATA[XIC(HMI_Auto_Mode)EQU(Dosing_Sequence,0)EQU(Digester_Pumping_Sequence,0)XIO(TruckUnloadInterlock)OTE(Operator_Transfer_Permissive);]]>
+</Text>
+</Rung>
+<Rung Number="5" Type="N">
+<Text>
+<![CDATA[XIC(Manual_Transfer_Active)[ONS(ONS[0].28) MOV(_400_FIT_01_Log_AOI.Anual_Flow,_400_OpTransfer_Temp) MOV(_400_FIT_02_Log_AOI.Anual_Flow,_400_OpTransfer_Temp_2) MOV(_200_FIT_01_Flow_AOI.Anual_Flow,_200_OpTransfer_Temp) ,XIC(_400_HPU_01:I.DriveStatus_Active) [SUB(_400_FIT_01_Log_AOI.Anual_Flow,_400_OpTransfer_Temp,ManualTransferTotal) ,GRT(ManualTransferTotal,0) MOV(ManualTransferTotal,Remember_ManualTransferTotal) ,LEQ(ManualTransferTotal,-200) ONS(ONS[3].0) NEG(Remember_ManualTransferTotal,_400_OpTransfer_Temp) ] ,XIC(ToTankActive.8) XIC(_400_PKGV01_UDT.CAE) [SUB(_400_FIT_02_Log_AOI.Anual_Flow,_400_OpTransfer_Temp_2,ManualTransferTotal) ,GRT(ManualTransferTotal,0) MOV(ManualTransferTotal,Remember_ManualTransferTotal) ,LEQ(ManualTransferTotal,-200) ONS(ONS[3].0) NEG(Remember_ManualTransferTotal,_400_OpTransfer_Temp_2) ] ,XIC(_200_HPU_01:I.DriveStatus_Active) [SUB(_200_FIT_01_Flow_AOI.Anual_Flow,_200_OpTransfer_Temp,ManualTransferTotal) ,GRT(ManualTransferTotal,0) MOV(ManualTransferTotal,Remember_ManualTransferTotal) ,LEQ(ManualTransferTotal,-200) ONS(ONS[3].0) NEG(Remember_ManualTransferTotal,_200_OpTransfer_Temp) ] ];]]>
+</Text>
+</Rung>
+<Rung Number="6" Type="N">
+<Text>
+<![CDATA[[XIO(Operator_Transfer_Permissive) MOV(0,FromTankActive) MOV(0,ToTankActive) ,XIC(Operator_Transfer_Permissive) LEQ(TransferQueue[0].Hour,DATE_TIME[3]) LEQ(TransferQueue[0].Minute,DATE_TIME[4]) [EQU(TransferQueue[0].FromTank,1) OTE(FromTankActive.1) ,EQU(TransferQueue[0].FromTank,2) OTE(FromTankActive.2) ,EQU(TransferQueue[0].FromTank,3) OTE(FromTankActive.3) ,EQU(TransferQueue[0].FromTank,4) OTE(FromTankActive.4) ,EQU(TransferQueue[0].FromTank,5) OTE(FromTankActive.5) ,EQU(TransferQueue[0].FromTank,6) OTE(FromTankActive.6) ,EQU(TransferQueue[0].FromTank,7) OTE(FromTankActive.7) ,EQU(TransferQueue[0].ToTank,1) OTE(ToTankActive.1) ,EQU(TransferQueue[0].ToTank,2) OTE(ToTankActive.2) ,EQU(TransferQueue[0].ToTank,3) OTE(ToTankActive.3) ,EQU(TransferQueue[0].ToTank,4) OTE(ToTankActive.4) ,EQU(TransferQueue[0].ToTank,5) OTE(ToTankActive.5) ,EQU(TransferQueue[0].ToTank,6) OTE(ToTankActive.6) ,EQU(TransferQueue[0].ToTank,7) OTE(ToTankActive.7) ] ];]]>
+</Text>
+</Rung>
+<Rung Number="7" Type="N">
+<Text>
+<![CDATA[XIC(FromTankActive.1)XIC(Operator_Transfer_Permissive)[LES(ManualTransferTotal,TransferQueue[0].Quantity) [[XIC(ToTankActive.2) XIO(_300_LT_01_ALM.HInAlarm) XIO(_300_LHS_01_DALM.InAlarm) OTL(_400_PKGV10_UDT.CAE) ,XIC(ToTankActive.3) XIO(_310_LT_01_ALM.HInAlarm) XIO(_310_LHS_01_DALM.InAlarm) OTL(_400_PKGV11_UDT.CAE) ,XIC(ToTankActive.4) XIO(_200_LT_01_ALM.HInAlarm) XIO(_200_LHS_01_DALM1.InAlarm) OTL(_400_PKGV13_UDT.CAE) ,XIC(ToTankActive.5) XIO(_510_LT_01_ALM.HInAlarm) OTL(_400_PKGV03_UDT.CAE) ,XIC(ToTankActive.6) OTL(_400_PKGV02_UDT.CAE) ] OTL(_400_PKGV06_UDT.CAE) OTL(_400_PKGV09_UDT.CAE) ,XIC(ToTankActive.7) OTL(_400_PKGV05_UDT.CAE) OTL(_400_PKGV10_UDT.CAE) ] OTL(Manual_Transfer_Active) TON(ManualTransferTMRS[1],?,?) ,XIC(ManualTransferTMRS[1].DN) LES(ManualTransferTotal,TransferQueue[0].Quantity) OTL(_400_RLP01_FWD_CMD) ];]]>
+</Text>
+</Rung>
+<Rung Number="8" Type="N">
+<Text>
+<![CDATA[XIC(FromTankActive.2)XIC(Operator_Transfer_Permissive)[LES(ManualTransferTotal,TransferQueue[0].Quantity) [[XIC(ToTankActive.1) XIO(_250_LT_01_ALM.HInAlarm) XIO(_250_LHS_01_DALM.InAlarm) OTL(_400_PKGV12_UDT.CAE) ,XIC(ToTankActive.3) XIO(_310_LT_01_ALM.HInAlarm) XIO(_310_LHS_01_DALM.InAlarm) OTL(_400_PKGV11_UDT.CAE) ,XIC(ToTankActive.4) XIO(_200_LT_01_ALM.HInAlarm) XIO(_200_LHS_01_DALM1.InAlarm) OTL(_400_PKGV13_UDT.CAE) ,XIC(ToTankActive.5) XIO(_510_LT_01_ALM.HInAlarm) OTL(_400_PKGV03_UDT.CAE) ,XIC(ToTankActive.6) OTL(_400_PKGV02_UDT.CAE) ] OTL(_400_PKGV06_UDT.CAE) OTL(_400_PKGV07_UDT.CAE) ,XIC(ToTankActive.7) OTL(_400_PKGV05_UDT.CAE) OTL(_400_PKGV10_UDT.CAE) ] TON(ManualTransferTMRS[2],?,?) OTL(Manual_Transfer_Active) ,XIC(ManualTransferTMRS[2].DN) LES(ManualTransferTotal,TransferQueue[0].Quantity) OTL(_400_RLP01_FWD_CMD) ];]]>
+</Text>
+</Rung>
+<Rung Number="9" Type="N">
+<Text>
+<![CDATA[XIC(FromTankActive.3)XIC(Operator_Transfer_Permissive)[LES(ManualTransferTotal,TransferQueue[0].Quantity) [[XIC(ToTankActive.1) XIO(_250_LT_01_ALM.HInAlarm) XIO(_250_LHS_01_DALM.InAlarm) OTL(_400_PKGV12_UDT.CAE) ,XIC(ToTankActive.2) XIO(_300_LT_01_ALM.HInAlarm) XIO(_300_LHS_01_DALM.InAlarm) OTL(_400_PKGV10_UDT.CAE) ,XIC(ToTankActive.4) XIO(_200_LT_01_ALM.HInAlarm) XIO(_200_LHS_01_DALM1.InAlarm) OTL(_400_PKGV13_UDT.CAE) ,XIC(ToTankActive.5) XIO(_510_LT_01_ALM.HInAlarm) OTL(_400_PKGV03_UDT.CAE) ,XIC(ToTankActive.6) OTL(_400_PKGV02_UDT.CAE) ] OTL(_400_PKGV06_UDT.CAE) OTL(_400_PKGV08_UDT.CAE) ,XIC(ToTankActive.7) OTL(_400_PKGV05_UDT.CAE) OTL(_400_PKGV11_UDT.CAE) ] TON(ManualTransferTMRS[3],?,?) OTL(Manual_Transfer_Active) ,XIC(ManualTransferTMRS[3].DN) LES(ManualTransferTotal,TransferQueue[0].Quantity) OTL(_400_RLP01_FWD_CMD) ];]]>
+</Text>
+</Rung>
+<Rung Number="10" Type="N">
+<Text>
+<![CDATA[XIC(FromTankActive.4)XIC(ToTankActive.5)XIC(Operator_Transfer_Permissive)XIO(_510_LT_01_ALM.HInAlarm)[LES(ManualTransferTotal,TransferQueue[0].Quantity) OTL(_400_PKGV14_UDT.CAE) TON(ManualTransferTMRS[4],?,?) OTL(Manual_Transfer_Active) ,XIC(ManualTransferTMRS[4].DN) LES(ManualTransferTotal,TransferQueue[0].Quantity) OTL(_200_RLP_FWD_CMD) ];]]>
+</Text>
+</Rung>
+<Rung Number="11" Type="N">
+<Text>
+<![CDATA[XIC(FromTankActive.5)XIC(Operator_Transfer_Permissive)[LES(ManualTransferTotal,TransferQueue[0].Quantity) [XIC(ToTankActive.1) XIO(_250_LT_01_ALM.HInAlarm) XIO(_250_LHS_01_DALM.InAlarm) OTL(_400_PKGV04_UDT.CAE) OTL(_400_PKGV12_UDT.CAE) ,XIC(ToTankActive.2) XIO(_300_LT_01_ALM.HInAlarm) XIO(_300_LHS_01_DALM.InAlarm) OTL(_400_PKGV04_UDT.CAE) OTL(_400_PKGV10_UDT.CAE) ,XIC(ToTankActive.3) XIO(_310_LT_01_ALM.HInAlarm) XIO(_310_LHS_01_DALM.InAlarm) OTL(_400_PKGV04_UDT.CAE) OTL(_400_PKGV11_UDT.CAE) ,XIC(ToTankActive.4) XIO(_200_LT_01_ALM.HInAlarm) XIO(_200_LHS_01_DALM1.InAlarm) OTL(_400_PKGV04_UDT.CAE) OTL(_400_PKGV13_UDT.CAE) ,XIC(ToTankActive.6) OTL(_400_PKGV02_UDT.CAE) OTL(_400_PKGV04_UDT.CAE) ,XIC(ToTankActive.7) OTL(_400_PKGV03_UDT.CAE) OTL(_400_PKGV05_UDT.CAE) ,XIC(ToTankActive.8) OTL(_400_PKGV01_UDT.CAE) ,XIC(ToTankActive.9) OTL(_400_PKGV04_UDT.CAE) OTL(_400_PKGV05_UDT.CAE) ] TON(ManualTransferTMRS[5],?,?) OTL(Manual_Transfer_Active) ,XIC(ManualTransferTMRS[5].DN) LES(ManualTransferTotal,TransferQueue[0].Quantity) [[XIC(ToTankActive.1) ,XIC(ToTankActive.2) ,XIC(ToTankActive.3) ,XIC(ToTankActive.6) ,XIC(ToTankActive.4) ] OTL(_400_RLP01_FWD_CMD) ,XIC(ToTankActive.7) OTL(_400_RLP_REV_CMD) ] ];]]>
+</Text>
+</Rung>
+<Rung Number="12" Type="N">
+<Text>
+<![CDATA[[XIC(Manual_Transfer_Active) [GEQ(ManualTransferTotal,TransferQueue[0].Quantity) ,XIO(Operator_Transfer_Permissive) ,XIC(ToTankActive.1) [XIC(_250_LT_01_ALM.HInAlarm) ,XIC(_250_LHS_01_DALM.InAlarm) ] ,XIC(ToTankActive.2) [XIC(_300_LT_01_ALM.HInAlarm) ,XIC(_300_LHS_01_DALM.InAlarm) ] ,XIC(ToTankActive.3) [XIC(_310_LT_01_ALM.HInAlarm) ,XIC(_310_LHS_01_DALM.InAlarm) ] ,XIC(ToTankActive.4) [XIC(_200_LT_01_ALM.HInAlarm) ,XIC(_200_LHS_01_DALM1.InAlarm) ] ,XIC(ToTankActive.5) XIC(_510_LT_02_ALM.HInAlarm) ] ,XIC(_200_Pump_NoFlow) ,XIC(_200_Pump_LowFlow) ,XIC(_400_Pump_NoFlow) ,XIC(_400_Pump_LowFlow) ][OTU(_200_RLP_FWD_CMD) OTU(_200_RLP_REV_CMD) OTU(_400_RLP01_FWD_CMD) OTU(_400_RLP_REV_CMD) ,XIO(_400_HPU_01:I.DriveStatus_Active) XIO(_200_HPU_01:I.DriveStatus_Active) [OTU(_400_PKGV01_UDT.CAE) OTU(_400_PKGV02_UDT.CAE) OTU(_400_PKGV03_UDT.CAE) OTU(_400_PKGV04_UDT.CAE) ,OTU(_400_PKGV05_UDT.CAE) OTU(_400_PKGV06_UDT.CAE) OTU(_400_PKGV07_UDT.CAE) OTU(_400_PKGV08_UDT.CAE) ,OTU(_400_PKGV09_UDT.CAE) OTU(_400_PKGV10_UDT.CAE) OTU(_400_PKGV11_UDT.CAE) OTU(_400_PKGV12_UDT.CAE) ,OTU(_400_PKGV13_UDT.CAE) OTU(_400_PKGV14_UDT.CAE) ,XIC(Manual_Transfer_Active) [GEQ(ManualTransferTotal,TransferQueue[0].Quantity) ,XIC(ToTankActive.1) XIC(_250_LT_01_ALM.HInAlarm) ,XIC(ToTankActive.2) XIC(_300_LT_01_ALM.HInAlarm) ,XIC(ToTankActive.3) XIC(_310_LT_01_ALM.HInAlarm) ,XIC(ToTankActive.4) XIC(_200_LT_01_ALM.HInAlarm) ,XIC(ToTankActive.5) XIC(_510_LT_02_ALM.HInAlarm) ] OTL(Manual_Transfer_Done) ,OTU(Manual_Transfer_Active) ] ];]]>
+</Text>
+</Rung>
+<Rung Number="13" Type="N">
+<Text>
+<![CDATA[XIC(Manual_Transfer_Done)[TON(ManualTransferTMRS[19],?,?) ,XIC(ManualTransferTMRS[19].DN) [FFU(TransferQueue[0],TransferQueueUnload,TransferQueueFIFO,?,?) ,MOV(0,ManualTransferTotal) OTU(Manual_Transfer_Done) ] ];]]>
+</Text>
+</Rung>
+<Rung Number="14" Type="N">
+<Text>
+<![CDATA[AFI()[EQU(0,DATE_TIME[3]) EQU(5,DATE_TIME[4]) LIM(0,DATE_TIME[5],10) ,XIC(OperatorTransferLoadTmr.TT) ]TON(OperatorTransferLoadTmr,?,?);]]>
+</Text>
+</Rung>
+<Rung Number="15" Type="N">
+<Text>
+<![CDATA[[LIM(5000,OperatorTransferLoadTmr.ACC,10000) MOV(1,TransferEntry.FromTank) MOV(4,TransferEntry.ToTank) MOV(2000.0,TransferEntry.Quantity) MOV(4,TransferEntry.Hour) MOV(0,TransferEntry.Minute) OTE(OpLoad1) ,LIM(15000,OperatorTransferLoadTmr.ACC,20000) MOV(1,TransferEntry.FromTank) MOV(4,TransferEntry.ToTank) MOV(2000.0,TransferEntry.Quantity) MOV(10,TransferEntry.Hour) MOV(0,TransferEntry.Minute) OTE(OpLoad2) ,LIM(25000,OperatorTransferLoadTmr.ACC,30000) MOV(1,TransferEntry.FromTank) MOV(4,TransferEntry.ToTank) MOV(2000.0,TransferEntry.Quantity) MOV(16,TransferEntry.Hour) MOV(0,TransferEntry.Minute) OTE(OpLoad3) ,LIM(35000,OperatorTransferLoadTmr.ACC,40000) MOV(1,TransferEntry.FromTank) MOV(4,TransferEntry.ToTank) MOV(2000.0,TransferEntry.Quantity) MOV(19,TransferEntry.Hour) MOV(0,TransferEntry.Minute) OTE(OpLoad4) ];]]>
+</Text>
+</Rung>
+</RLLContent>
+</Routine>
+</Routines>
+</Program>
+</Programs>
+</Controller>
+</RSLogix5000Content>
